@@ -8,6 +8,7 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://usagi-blog.vercel.app"),
@@ -49,15 +50,20 @@ export default function RootLayout({
       <body className="bg-zinc-50 text-zinc-900">
         {/* ヘッダー */}
         <header className="border-b bg-white">
-          <div className="mx-auto max-w-6xl px-6 py-6">
+          <div className="mx-auto max-w-6xl px-4 py-6">
             <h1 className="text-3xl font-bold">
-              Usagi Blog
+              <Link
+                href="/"
+                className="hover:opacity-80 transition-opacity"
+              >
+                Usagi Blog
+              </Link>
             </h1>
           </div>
         </header>
 
         {/* ページ内容 */}
-        <main className="mx-auto max-w-6xl px-4 sm:px-6 py-6">
+        <main className="mx-auto max-w-6xl px-4 py-6">
           {children}
         </main>
       </body>

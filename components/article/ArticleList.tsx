@@ -54,7 +54,7 @@ const articles = [
 
 export default function ArticleList() {
   return (
-    <section className="max-w-4xl mx-auto sm:px-6 sm:py-8">
+    <section className="max-w-4xl mx-auto">
 
       {/* セクションタイトル */}
       <h2 className="text-2xl font-bold mb-8">
