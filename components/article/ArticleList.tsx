@@ -6,7 +6,7 @@ import ArticleCard from "./ArticleCard";
 
 const articles = [
   {
-    slug: "/articles/nextjs-architecture",
+    slug: "nextjs-architecture",
     title: "Next.js App Routerで作る拡張性の高い設計",
     description:
       "App Routerを活用した、スケーラブルで保守性の高いフロントエンド設計の考え方を解説します。",
@@ -15,7 +15,7 @@ const articles = [
     tags: ["Next.js", "設計", "TypeScript"],
   },
   {
-    slug: "/articles/typescript-design",
+    slug: "typescript-design",
     title: "TypeScript型設計のベストプラクティス",
     description:
       "大規模開発に耐えうるTypeScriptの型設計手法を実例付きで紹介します。",
@@ -24,7 +24,7 @@ const articles = [
     tags: ["TypeScript", "設計", "フロントエンド"],
   },
   {
-    slug: "/articles/react-performance",
+    slug: "react-performance",
     title: "Reactパフォーマンス最適化戦略",
     description:
       "レンダリング最適化・メモ化・構造設計の観点からパフォーマンス改善を解説。",
@@ -33,7 +33,7 @@ const articles = [
     tags: ["React", "パフォーマンス"],
   },
   {
-    slug: "/articles/clean-architecture",
+    slug: "clean-architecture",
     title: "フロントエンドにおけるClean Architecture",
     description:
       "依存関係の方向を意識した責務分離設計の実践方法を具体例で説明します。",
@@ -42,7 +42,7 @@ const articles = [
     tags: ["設計", "アーキテクチャ"],
   },
   {
-    slug: "/articles/ui-ux-thinking",
+    slug: "ui-ux-thinking",
     title: "UI/UX設計で差がつく思考法",
     description:
       "ユーザー中心設計の考え方と実践的アプローチをまとめました。",

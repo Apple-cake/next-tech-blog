@@ -9,6 +9,7 @@
  */
 
 import TagBadge from "./TagBadge";
+import Link from "next/link";
 
 export type Article = {
   slug: string;
@@ -25,8 +26,8 @@ type Props = {
 
 export default function ArticleCard({ article }: Props) {
   return (
-    <a
-      href={article.slug}
+    <Link
+      href={`/articles/${article.slug}`}
       className="
         block
         rounded-xl
@@ -63,6 +64,6 @@ export default function ArticleCard({ article }: Props) {
         <span>{article.publishedAt}</span>
         <span>{article.readingTime}</span>
       </div>
-    </a>
+    </Link>
   );
 }
