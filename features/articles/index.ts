@@ -11,10 +11,14 @@ export type Article = {
 };
 
 import { nextjsArchitecture } from "./contents/nextjs-architecture";
-// 将来増えたらここにimport追加
+import { typescriptDesign } from "./contents/typescript-design";
+import { reactPerformance } from "./contents/react-performance";
+// 記事が増えたらここにimport追加
 
 export const articles: Article[] = [
   nextjsArchitecture,
+  typescriptDesign,
+  reactPerformance,
 ];
 
 /**
@@ -29,4 +33,18 @@ export function getArticleBySlug(slug: string) {
  */
 export function getAllArticles() {
   return articles;
+}
+
+/**
+ * 前後記事を取得
+ */
+export function getAdjacentArticles(slug: string) {
+  const index = articles.findIndex((a) => a.slug === slug);
+
+  if (index === -1) return { prev: null, next: null };
+
+  return {
+    prev: articles[index + 1] ?? null, // 古い記事
+    next: articles[index - 1] ?? null, // 新しい記事
+  };
 }
