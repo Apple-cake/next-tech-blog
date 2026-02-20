@@ -67,7 +67,7 @@ export default async function ArticlePage({ params }: Props) {
       {/* パンくず */}
       <nav
         aria-label="Breadcrumb"
-        className="mb-6 text-sm text-zinc-500 flex items-center gap-2"
+        className="hidden md:flex mb-6 text-sm text-zinc-500 flex items-center gap-2"
       >
         <Link
           href="/"
