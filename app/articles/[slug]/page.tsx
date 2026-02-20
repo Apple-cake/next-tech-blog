@@ -82,6 +82,27 @@ export default async function ArticlePage({ params }: Props) {
           {article.title}
         </span>
       </nav>
+      {/* タグ一覧 */}
+      <div className="mb-8 flex flex-wrap gap-2">
+        {article.tags.map((tag) => (
+          <Link
+            key={tag}
+            href={`/tags/${encodeURIComponent(tag)}`}
+            className="
+              text-xs
+              px-3 py-1
+              rounded-full
+              bg-zinc-100
+              text-zinc-700
+              transition-colors
+              hover:bg-zinc-200
+              hover:text-zinc-900
+            "
+          >
+            {tag}
+          </Link>
+        ))}
+      </div>
       {/* 記事ヘッダー */}
       <header className="mb-8">
         <h1 className="text-3xl font-bold">{article.title}</h1>

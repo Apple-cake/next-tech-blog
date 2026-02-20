@@ -8,6 +8,7 @@ export type Article = {
   publishedAt: string;
   readingTime: string;
   content: string;
+  tags: string[];
 };
 
 import { nextjsArchitecture } from "./contents/nextjs-architecture";

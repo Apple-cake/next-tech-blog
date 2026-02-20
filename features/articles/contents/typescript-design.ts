@@ -7,6 +7,7 @@ export const typescriptDesign: Article = {
     "大規模開発に耐えうるTypeScriptの型設計手法を実例付きで紹介します。",
   publishedAt: "2026.02.15",
   readingTime: "7分",
+  tags: ["TypeScript", "設計", "フロントエンド"],
   content: `
     <h2>なぜ型設計が重要なのか</h2>
     <p>

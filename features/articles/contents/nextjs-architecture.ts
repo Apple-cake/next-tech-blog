@@ -10,6 +10,7 @@ export const nextjsArchitecture: Article = {
     "App Routerを活用した実務レベルの設計戦略を体系的に解説します。",
   publishedAt: "2026.02.18",
   readingTime: "5分",
+  tags: ["Next.js", "設計", "TypeScript"],
   content: `
 ## なぜ設計が重要なのか？
 
