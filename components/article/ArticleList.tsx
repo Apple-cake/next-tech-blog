@@ -10,13 +10,13 @@ type Props = {
   title?: string;
 };
 
-export default function ArticleList({ articles }: Props) {
+export default function ArticleList({ articles, title }: Props) {
   return (
     <section className="max-w-4xl mx-auto">
 
       {/* セクションタイトル */}
       <h2 className="text-2xl font-bold mb-8">
-        新着記事
+        {title}
       </h2>
 
       {/* 縦並び */}
