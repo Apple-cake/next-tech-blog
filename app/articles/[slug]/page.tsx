@@ -89,7 +89,7 @@ export default async function ArticlePage({ params }: Props) {
           <TagBadge
             key={tag.slug}
             label={tag.name}
-            slug={`/tags/${tag.slug}`}
+            slug={tag.slug}
           />
         ))}
       </div>
