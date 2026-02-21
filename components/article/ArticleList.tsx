@@ -1,5 +1,5 @@
 /**
- * 最新記事一覧（縦型）
+ * 最新記事一覧
  */
 
 import ArticleCard from "./ArticleCard";

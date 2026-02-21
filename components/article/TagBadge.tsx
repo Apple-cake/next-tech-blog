@@ -1,3 +1,5 @@
+"use client";
+
 /**
  * TagBadge.tsx
  *
@@ -8,10 +10,10 @@ import Link from "next/link";
 
 type Props = {
   label: string;
-  href?: string;
+  slug?: string;
 };
 
-export default function TagBadge({ label, href }: Props) {
+export default function TagBadge({ label, slug }: Props) {
   const className = `
     inline-block
     rounded-full
@@ -25,10 +27,11 @@ export default function TagBadge({ label, href }: Props) {
     hover:bg-zinc-200
   `;
 
-  if (href) {
+  if (slug) {
     return (
       <Link
-        href={href}
+        href={`/tags/${slug}`}
+        onClick={(e) => e.stopPropagation()}
         className={`${className} hover:text-zinc-900`}
       >
         {label}
