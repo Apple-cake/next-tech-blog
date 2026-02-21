@@ -53,7 +53,7 @@ export default function ArticleCard({ article }: Props) {
       {/* Tags */}
       <div className="mb-3 flex flex-wrap gap-2">
         {article.tags.map((tag) => (
-          <TagBadge key={tag.slug} tag={tag.name} />
+          <TagBadge key={tag.slug} label={tag.name} />
         ))}
       </div>
 

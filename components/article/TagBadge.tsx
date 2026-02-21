@@ -2,33 +2,43 @@
  * TagBadge.tsx
  *
  * 記事のタグ表示用コンポーネント
- * 再利用可能な最小UI単位
- *
- * 使用例:
- * <TagBadge tag="Next.js" />
  */
 
+import Link from "next/link";
+
 type Props = {
-  tag: string;
+  label: string;
+  href?: string;
 };
 
-export default function TagBadge({ tag }: Props) {
+export default function TagBadge({ label, href }: Props) {
+  const className = `
+    inline-block
+    rounded-full
+    bg-zinc-100
+    px-3
+    py-1
+    text-xs
+    font-medium
+    text-zinc-700
+    transition-colors
+    hover:bg-zinc-200
+  `;
+
+  if (href) {
+    return (
+      <Link
+        href={href}
+        className={`${className} hover:text-zinc-900`}
+      >
+        {label}
+      </Link>
+    );
+  }
+
   return (
-    <span
-      className="
-        inline-block
-        rounded-full
-        bg-zinc-100
-        px-3
-        py-1
-        text-xs
-        font-medium
-        text-zinc-700
-        hover:bg-zinc-200
-        transition
-      "
-    >
-      {tag}
+    <span className={className}>
+      {label}
     </span>
   );
 }

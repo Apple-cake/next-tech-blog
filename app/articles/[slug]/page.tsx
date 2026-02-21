@@ -9,6 +9,7 @@ import {
   getAllArticles,
   getAdjacentArticles,
 } from "../../../features/articles";
+import TagBadge from "../../../components/article/TagBadge";
 import Link from "next/link";
 
 type Props = {
@@ -85,22 +86,11 @@ export default async function ArticlePage({ params }: Props) {
       {/* タグ一覧 */}
       <div className="mb-8 flex flex-wrap gap-2">
         {article.tags.map((tag) => (
-          <Link
+          <TagBadge
             key={tag.slug}
-            href={`/tags/${encodeURIComponent(tag.slug)}`}
-            className="
-              text-xs
-              px-3 py-1
-              rounded-full
-              bg-zinc-100
-              text-zinc-700
-              transition-colors
-              hover:bg-zinc-200
-              hover:text-zinc-900
-            "
-          >
-            {tag.name}
-          </Link>
+            label={tag.name}
+            href={`/tags/${tag.slug}`}
+          />
         ))}
       </div>
       {/* 記事ヘッダー */}
