@@ -1,4 +1,12 @@
 /**
+ * タグ型
+ */
+export type Tag = {
+  name: string; // 表示用
+  slug: string; // URL用
+};
+
+/**
  * 記事型定義
  */
 export type Article = {
@@ -8,7 +16,7 @@ export type Article = {
   publishedAt: string;
   readingTime: string;
   content: string;
-  tags: string[];
+  tags: Tag[];
 };
 
 import { nextjsArchitecture } from "./contents/nextjs-architecture";

@@ -86,8 +86,8 @@ export default async function ArticlePage({ params }: Props) {
       <div className="mb-8 flex flex-wrap gap-2">
         {article.tags.map((tag) => (
           <Link
-            key={tag}
-            href={`/tags/${encodeURIComponent(tag)}`}
+            key={tag.slug}
+            href={`/tags/${encodeURIComponent(tag.slug)}`}
             className="
               text-xs
               px-3 py-1
@@ -99,7 +99,7 @@ export default async function ArticlePage({ params }: Props) {
               hover:text-zinc-900
             "
           >
-            {tag}
+            {tag.name}
           </Link>
         ))}
       </div>

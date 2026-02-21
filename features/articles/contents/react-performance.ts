@@ -7,7 +7,10 @@ export const reactPerformance: Article = {
     "レンダリング最適化・メモ化・構造設計の観点からパフォーマンス改善を解説。",
   publishedAt: "2026.02.12",
   readingTime: "6分",
-  tags: ["React", "パフォーマンス"],
+  tags: [
+    { name: "React", slug: "react" },
+    { name: "パフォーマンス", slug: "performance" },
+  ],
   content: `
     <h2>不要な再レンダリングを防ぐ</h2>
     <p>

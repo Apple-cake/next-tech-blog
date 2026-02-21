@@ -12,7 +12,11 @@ const articles = [
       "App Routerを活用した、スケーラブルで保守性の高いフロントエンド設計の考え方を解説します。",
     publishedAt: "2026.02.18",
     readingTime: "5分",
-    tags: ["Next.js", "設計", "TypeScript"],
+    tags: [
+      { name: "Next.js", slug: "nextjs" },
+      { name: "設計", slug: "design" },
+      { name: "TypeScript", slug: "typescript" },
+    ],
   },
   {
     slug: "typescript-design",
@@ -21,7 +25,11 @@ const articles = [
       "大規模開発に耐えうるTypeScriptの型設計手法を実例付きで紹介します。",
     publishedAt: "2026.02.15",
     readingTime: "7分",
-    tags: ["TypeScript", "設計", "フロントエンド"],
+    tags: [
+      { name: "TypeScript", slug: "typescript" },
+      { name: "設計", slug: "design" },
+      { name: "フロントエンド", slug: "frontend" },
+    ],
   },
   {
     slug: "react-performance",
@@ -30,7 +38,10 @@ const articles = [
       "レンダリング最適化・メモ化・構造設計の観点からパフォーマンス改善を解説。",
     publishedAt: "2026.02.12",
     readingTime: "6分",
-    tags: ["React", "パフォーマンス"],
+    tags: [
+      { name: "React", slug: "react" },
+      { name: "パフォーマンス", slug: "performance" },
+    ],
   },
   {
     slug: "clean-architecture",
@@ -39,7 +50,10 @@ const articles = [
       "依存関係の方向を意識した責務分離設計の実践方法を具体例で説明します。",
     publishedAt: "2026.02.08",
     readingTime: "8分",
-    tags: ["設計", "アーキテクチャ"],
+    tags: [
+      { name: "設計", slug: "design" },
+      { name: "アーキテクチャ", slug: "architecture" },
+    ],
   },
   {
     slug: "ui-ux-thinking",
@@ -48,7 +62,11 @@ const articles = [
       "ユーザー中心設計の考え方と実践的アプローチをまとめました。",
     publishedAt: "2026.02.05",
     readingTime: "4分",
-    tags: ["UI", "UX", "プロダクト"],
+    tags: [
+      { name: "UI", slug: "ui" },
+      { name: "UX", slug: "ux" },
+      { name: "プロダクト", slug: "product" },
+    ],
   },
 ];
 

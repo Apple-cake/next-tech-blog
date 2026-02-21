@@ -11,13 +11,21 @@
 import TagBadge from "./TagBadge";
 import Link from "next/link";
 
+/**
+ * タグ型
+ */
+export type Tag = {
+  name: string; // 表示用
+  slug: string; // URL用
+};
+
 export type Article = {
   slug: string;
   title: string;
   description: string;
   publishedAt: string;
   readingTime: string;
-  tags: string[];
+  tags: Tag[];
 };
 
 type Props = {
@@ -45,7 +53,7 @@ export default function ArticleCard({ article }: Props) {
       {/* Tags */}
       <div className="mb-3 flex flex-wrap gap-2">
         {article.tags.map((tag) => (
-          <TagBadge key={tag} tag={tag} />
+          <TagBadge key={tag.slug} tag={tag.name} />
         ))}
       </div>
 
