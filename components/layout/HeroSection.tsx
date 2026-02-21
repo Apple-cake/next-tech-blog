@@ -31,14 +31,14 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl">
-          <h1 className="relative text-3xl md:text-5xl font-bold mb-2 leading-tight hero-heading">
+          <h1 className="relative text-2xl md:text-5xl font-bold mb-2 leading-tight hero-heading">
             設計で、
           </h1>
-          <h1 className="relative text-3xl md:text-5xl font-bold mb-6 leading-tight hero-heading">
+          <h1 className="relative text-2xl md:text-5xl font-bold mb-6 leading-tight hero-heading">
             プロダクトは進化する。
           </h1>
 
-          <p className="text-zinc-600 text-base md:text-lg leading-relaxed">
+          <p className="text-zinc-600 text-sm md:text-lg leading-relaxed">
             フロントエンド設計・TypeScript・Reactアーキテクチャを中心に、
             スケーラブルな開発の思考法を発信しています。
           </p>

@@ -36,20 +36,11 @@ body {
   background: linear-gradient(
     180deg,
     #f1f1f1,
-    #acc6d0,
+    #b0c4de,
     #f5fffa
   );
   background-size: 200% 200%;
-  animation: gradientMove 20s ease-in-out infinite;
 }
-
-/* 背景グラデーション動かす */
-@keyframes gradientMove {
-  0% { background-position: 50% 0%; }
-  50% { background-position: 50% 100%; }
-  100% { background-position: 50% 0%; }
-}
-
 
 /* =========================
   気泡アニメーション
