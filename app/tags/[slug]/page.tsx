@@ -1,3 +1,7 @@
+/**
+ * タグ別一覧ページ
+ */
+
 import { articles } from "@/lib/articles";
 import { tags } from "@/lib/tags";
 import ArticleList from "@/components/article/ArticleList";
