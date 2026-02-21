@@ -9,6 +9,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import Footer from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://usagi-blog.vercel.app"),
@@ -63,9 +64,12 @@ export default function RootLayout({
         </header>
 
         {/* ページ内容 */}
-        <main className="mx-auto max-w-6xl">
-          {children}
+        <main className="bg-zinc-50">
+          <div className="mx-auto max-w-6xl">{children}</div>
         </main>
+
+        {/* フッター */}
+        <Footer />
       </body>
     </html>
   );
