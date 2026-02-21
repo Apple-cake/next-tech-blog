@@ -64,7 +64,7 @@ export default async function ArticlePage({ params }: Props) {
   const { prev, next } = getAdjacentArticles(slug);
 
   return (
-    <article className="max-w-4xl mx-auto px-6 py-10">
+    <article className="max-w-4xl mx-auto px-6 py-6">
       {/* パンくず */}
       <nav
         aria-label="Breadcrumb"
