@@ -25,13 +25,16 @@ export default function HeroSection() {
         <span />
         <span />
         <span />
+        <span />
+        <span />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+          <h1 className="relative text-3xl md:text-5xl font-bold mb-2 leading-tight hero-heading">
             設計で、
-            <br />
+          </h1>
+          <h1 className="relative text-3xl md:text-5xl font-bold mb-6 leading-tight hero-heading">
             プロダクトは進化する。
           </h1>
 
