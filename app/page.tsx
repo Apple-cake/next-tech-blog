@@ -8,6 +8,7 @@
 
 import ArticleList from "@/components/article/ArticleList";
 import ProfileCard from "@/components/profile/ProfileCard";
+import { articles } from "@/lib/articles";
 
 export default function Home() {
   return (
@@ -22,7 +23,10 @@ export default function Home() {
       >
         {/* 記事一覧エリア */}
         <section className="lg:col-span-3">
-          <ArticleList />
+          <ArticleList
+            articles={articles}
+            title="新着記事"
+          />
         </section>
 
         {/* サイドバー */}
