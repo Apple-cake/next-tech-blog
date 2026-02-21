@@ -21,7 +21,11 @@ export default function HeroSection() {
       "
     >
       {/* 背景 */}
-      <div className="absolute inset-0 hero-gradient -z-10" />
+      <div className="absolute inset-0 hero-gradient -z-10">
+        <span />
+        <span />
+        <span />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl">

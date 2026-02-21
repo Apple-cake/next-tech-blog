@@ -25,10 +25,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Hero background animation */
+/* =========================
+  Hero Animated Blobs
+========================= */
+
 .hero-gradient {
   position: absolute;
   inset: 0;
+  overflow: hidden;
   background: linear-gradient(
     -45deg,
     #f4f4f5,
@@ -37,21 +41,47 @@ body {
     #e2e8f0
   );
   background-size: 400% 400%;
-  animation: heroGradientMove 15s ease infinite;
-  overflow: hidden;
+  animation: heroGradientMove 18s ease infinite;
 }
 
-.hero-gradient::after {
-  content: "";
+/* 丸い図形共通 */
+.hero-gradient span {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 30% 40%,
-    rgba(255, 255, 255, 0.5),
-    transparent 60%
-  );
-  animation: heroGlowMove 12s ease-in-out infinite alternate;
-  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.4;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Blob1 */
+.hero-gradient span:nth-child(1) {
+  width: 400px;
+  height: 400px;
+  background: #dbeafe;
+  top: -100px;
+  left: -100px;
+  animation: float1 2.5s infinite alternate;
+}
+
+/* Blob2 */
+.hero-gradient span:nth-child(2) {
+  width: 500px;
+  height: 500px;
+  background: #e9d5ff;
+  bottom: -150px;
+  right: -150px;
+  animation: float2 3s infinite alternate;
+}
+
+/* Blob3 */
+.hero-gradient span:nth-child(3) {
+  width: 300px;
+  height: 300px;
+  background: #fde68a;
+  top: 40%;
+  left: 50%;
+  animation: float3 2.2s infinite alternate;
 }
 
 @keyframes heroGradientMove {
@@ -60,11 +90,17 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-@keyframes heroGlowMove {
-  0% {
-    transform: translate(-5%, -5%) scale(1);
-  }
-  100% {
-    transform: translate(5%, 5%) scale(1.1);
-  }
+@keyframes float1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(200px, 150px); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-200px, -100px); }
+}
+
+@keyframes float3 {
+  0% { transform: translate(-50%, -50%); }
+  100% { transform: translate(-30%, -60%); }
 }
