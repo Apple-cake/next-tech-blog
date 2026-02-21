@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-20">
+    <footer className="mt-5 md:mt-10">
       <div className="max-w-6xl mx-auto px-6 py-10 text-center">
 
         {/* 上部リンク */}
