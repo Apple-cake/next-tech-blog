@@ -1,0 +1,42 @@
+/**
+ * HeroSection.tsx
+ *
+ * ヒーローセクション
+ */
+
+export default function HeroSection() {
+  return (
+    <section
+      className="
+        relative
+        w-screen
+        left-1/2
+        -translate-x-1/2
+        overflow-hidden
+        pt-16
+        pb-10
+        md:pt-24
+        md:pb-16
+        mb-8
+      "
+    >
+      {/* 背景 */}
+      <div className="absolute inset-0 hero-gradient -z-10" />
+
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="max-w-3xl">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+            設計で、
+            <br />
+            プロダクトは進化する。
+          </h1>
+
+          <p className="text-zinc-600 text-base md:text-lg leading-relaxed">
+            フロントエンド設計・TypeScript・Reactアーキテクチャを中心に、
+            スケーラブルな開発の思考法を発信しています。
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -7,35 +7,41 @@
  */
 
 import ArticleList from "@/components/article/ArticleList";
+import HeroSection from "@/components/layout/HeroSection";
 import ProfileCard from "@/components/profile/ProfileCard";
 import { articles } from "@/lib/articles";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl mx-auto px-6 py-6">
-      <div
-        className="
-          grid
-          grid-cols-1
-          lg:grid-cols-4
-          gap-10
-        "
-      >
-        {/* 記事一覧エリア */}
-        <section className="lg:col-span-3">
-          <ArticleList
-            articles={articles}
-            title="新着記事"
-          />
-        </section>
+    <>
+      {/* ヒーローセクション */}
+      <HeroSection />
+      {/* コンテンツエリア */}
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <div
+          className="
+            grid
+            grid-cols-1
+            lg:grid-cols-4
+            gap-10
+          "
+        >
+          {/* 記事一覧エリア */}
+          <section id="articles" className="lg:col-span-3">
+            <ArticleList
+              articles={articles}
+              title="新着記事"
+            />
+          </section>
 
-        {/* サイドバー */}
-        <aside className="lg:col-span-1">
-          <div className="lg:sticky lg:top-12">
-            <ProfileCard />
-          </div>
-        </aside>
+          {/* サイドバー */}
+          <aside className="lg:col-span-1">
+            <div className="lg:sticky lg:top-12">
+              <ProfileCard />
+            </div>
+          </aside>
+        </div>
       </div>
-    </main>
+    </>
   );
 }

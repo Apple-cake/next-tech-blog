@@ -24,3 +24,47 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Hero background animation */
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    -45deg,
+    #f4f4f5,
+    #e4e4e7,
+    #f1f5f9,
+    #e2e8f0
+  );
+  background-size: 400% 400%;
+  animation: heroGradientMove 15s ease infinite;
+  overflow: hidden;
+}
+
+.hero-gradient::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 30% 40%,
+    rgba(255, 255, 255, 0.5),
+    transparent 60%
+  );
+  animation: heroGlowMove 12s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes heroGradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes heroGlowMove {
+  0% {
+    transform: translate(-5%, -5%) scale(1);
+  }
+  100% {
+    transform: translate(5%, 5%) scale(1.1);
+  }
+}
