@@ -15,6 +15,7 @@ import ProfileCard from "@/components/profile/ProfileCard";
 import Link from "next/link";
 import { extractHeadings } from "@/lib/toc";
 import TableOfContents from "@/components/article/TableOfContents";
+import BackToTopButton from "@/components/common/BackToTopButton";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -167,6 +168,7 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </aside>
       </div>
+      <BackToTopButton />
     </article>
   );
 }
