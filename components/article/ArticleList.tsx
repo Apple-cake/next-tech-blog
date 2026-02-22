@@ -15,9 +15,9 @@ export default function ArticleList({ articles, title }: Props) {
     <section className="max-w-4xl mx-auto">
 
       {/* セクションタイトル */}
-      <h2 className="text-2xl font-bold mb-8">
+      <p className="text-2xl font-bold mb-8">
         {title}
-      </h2>
+      </p>
 
       {/* 記事カード */}
       <div className="flex flex-col gap-6">

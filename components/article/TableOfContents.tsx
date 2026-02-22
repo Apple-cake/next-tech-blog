@@ -48,9 +48,9 @@ export default function TableOfContents({
 
   return (
     <div className="md:mt-10 md:border-t md:pt-6">
-      <h2 className="text-sm font-semibold mb-4 tracking-wide text-zinc-700">
+      <p className="text-sm font-semibold mb-4 tracking-wide text-zinc-700">
         目次
-      </h2>
+      </p>
 
       <ul className="space-y-2 text-sm">
         {items.map((item) => (

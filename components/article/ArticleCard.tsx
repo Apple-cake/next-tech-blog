@@ -52,9 +52,9 @@ export default function ArticleCard({ article }: Props) {
       </div>
 
       {/* タイトル */}
-      <h3 className="mb-2 text-xl font-semibold text-zinc-900">
+      <p className="mb-2 text-xl font-semibold text-zinc-900">
         {article.title}
-      </h3>
+      </p>
 
       {/* 説明 */}
       <p className="mb-4 text-sm text-zinc-600 line-clamp-3">

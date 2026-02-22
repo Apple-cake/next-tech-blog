@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-10 text-center">
 
         {/* 上部リンク */}
-        <div className="mb-8 text-xs text-zinc-600">
+        <div className="mb-6 text-xs text-zinc-600">
           <Link
             href="/privacy"
             className="hover:underline"
@@ -18,7 +18,7 @@ export default function Footer() {
             プライバシーポリシー
           </Link>
 
-          <span className="mx-4">|</span>
+          <span className="mx-2">|</span>
 
           <Link
             href="/contact"
@@ -29,19 +29,19 @@ export default function Footer() {
         </div>
 
         {/* サイト説明 */}
-        <p className="text-xs text-zinc-600 mb-2">
+        <p className="text-xs text-zinc-600 mb-1">
           日々の学びを発信するサイト
         </p>
 
         {/* タイトル */}
-        <h2 className="text-3xl font-bold mb-4">
+        <p className="text-2xl font-bold mb-3">
           <Link
             href="/"
             className="transition-opacity"
           >
             Usagi Blog
           </Link>
-        </h2>
+        </p>
 
         {/* コピーライト */}
         <p className="text-sm text-zinc-500">

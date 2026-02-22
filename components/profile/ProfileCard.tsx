@@ -20,9 +20,9 @@ export default function ProfileCard() {
           />
 
           {/* Name */}
-          <h2 id="profile-heading" className="text-xl font-semibold text-zinc-900">
+          <p id="profile-heading" className="text-xl font-semibold text-zinc-900">
             Usagi
-          </h2>
+          </p>
 
           {/* Role */}
           <p className="text-sm text-zinc-500 mb-4">
