@@ -1,6 +1,7 @@
 /**
  * タグ型
  */
+
 export type Tag = {
   name: string; // 表示用
   slug: string; // URL用

@@ -1,6 +1,4 @@
 /**
- * Footer.tsx
- *
  * サイト共通フッター
  */
 
@@ -32,12 +30,17 @@ export default function Footer() {
 
         {/* サイト説明 */}
         <p className="text-xs text-zinc-600 mb-2">
-          初心者プログラマーによる日々の学びを発信するサイト
+          日々の学びを発信するサイト
         </p>
 
         {/* タイトル */}
         <h2 className="text-3xl font-bold mb-4">
-          Usagi Blog
+          <Link
+            href="/"
+            className="transition-opacity"
+          >
+            Usagi Blog
+          </Link>
         </h2>
 
         {/* コピーライト */}

@@ -1,11 +1,5 @@
 /**
- * ArticleCard.tsx
- *
- * 記事カードコンポーネント
- * 記事1件分のUI表示を担当
- *
- * 使用例:
- * <ArticleCard article={article} />
+ * 記事カード
  */
 
 import TagBadge from "./TagBadge";

@@ -1,6 +1,7 @@
 /**
  * HTML文字列から目次情報を抽出する
  */
+
 export type TocItem = {
   id: string;
   text: string;

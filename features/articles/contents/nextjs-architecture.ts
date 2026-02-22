@@ -1,8 +1,5 @@
 import type { Article } from "../index";
 
-/**
- * Next.js App Routerで作る拡張性の高い設計
- */
 export const nextjsArchitecture: Article = {
   slug: "nextjs-architecture",
   title: "Next.js App Routerで作る拡張性の高い設計",

@@ -85,7 +85,7 @@ export default async function ArticlePage({ params }: Props) {
   );
 
   return (
-    <article className="max-w-7xl mx-auto px-6 py-10">
+    <article className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
         <section className="lg:col-span-3">
           {/* パンくず */}

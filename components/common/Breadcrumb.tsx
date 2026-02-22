@@ -1,7 +1,5 @@
 /**
- * Breadcrumb.tsx
- *
- * 汎用パンくずコンポーネント
+ * 汎用パンくず
  */
 
 import Link from "next/link";

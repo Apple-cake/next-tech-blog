@@ -2,8 +2,9 @@ import Link from "next/link";
 import { TocItem } from "@/lib/toc";
 
 /**
- * 記事目次コンポーネント
+ * 記事目次
  */
+
 export default function TableOfContents({
   items,
 }: {

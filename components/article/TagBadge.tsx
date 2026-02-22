@@ -1,9 +1,7 @@
 "use client";
 
 /**
- * TagBadge.tsx
- *
- * 記事のタグ表示用コンポーネント
+ * 記事のタグバッジ
  */
 
 import Link from "next/link";

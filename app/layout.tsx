@@ -9,6 +9,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -54,18 +55,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className="bg-zinc-50 text-zinc-900">
         {/* ヘッダー */}
-        <header className="border-b bg-white">
-          <div className="mx-auto max-w-6xl px-4 py-6">
-            <h1 className="text-3xl font-bold">
-              <Link
-                href="/"
-                className="hover:opacity-80 transition-opacity"
-              >
-                Usagi Blog
-              </Link>
-            </h1>
-          </div>
-        </header>
+        <Header />
 
         {/* ページ内容 */}
         <main className="bg-zinc-50">
