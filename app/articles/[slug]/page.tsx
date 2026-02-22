@@ -13,6 +13,8 @@ import TagBadge from "@/components/article/TagBadge";
 import Breadcrumb from "@/components/common/Breadcrumb";
 import ProfileCard from "@/components/profile/ProfileCard";
 import Link from "next/link";
+import { extractHeadings } from "@/lib/toc";
+import TableOfContents from "@/components/article/TableOfContents";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -65,6 +67,22 @@ export default async function ArticlePage({ params }: Props) {
 
   const { prev, next } = getAdjacentArticles(slug);
 
+  const toc = extractHeadings(article.content);
+
+  // 見出しに id を注入
+  const contentWithIds = article.content.replace(
+    /<(h2|h3)(.*?)>(.*?)<\/\1>/g,
+    (match, tag, attrs, inner) => {
+      const text = inner.replace(/<[^>]+>/g, "");
+      const id = text
+        .toLowerCase()
+        .replace(/\s+/g, "-")
+        .replace(/[^\w\-ぁ-んァ-ン一-龥]/g, "");
+
+      return `<${tag} id="${id}"${attrs}>${inner}</${tag}>`;
+    }
+  );
+
   return (
     <article className="max-w-7xl mx-auto px-6 py-10">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
@@ -97,7 +115,7 @@ export default async function ArticlePage({ params }: Props) {
           {/* 本文 */}
           <div
             className="prose prose-zinc prose-pre:overflow-x-auto prose-pre:bg-zinc-100 prose-pre:p-4 prose-pre:rounded-lg max-w-none"
-            dangerouslySetInnerHTML={{ __html: article.content }}
+            dangerouslySetInnerHTML={{ __html: contentWithIds }}
           />
           {/* 前後記事ナビ */}
           <hr className="my-12 border-zinc-200" />
@@ -145,6 +163,7 @@ export default async function ArticlePage({ params }: Props) {
         <aside className="lg:col-span-1">
           <div className="lg:sticky lg:top-12">
             <ProfileCard />
+            <TableOfContents items={toc} />
           </div>
         </aside>
       </div>
