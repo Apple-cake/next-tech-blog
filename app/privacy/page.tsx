@@ -5,6 +5,8 @@
  */
 
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 
 export const metadata = {
   title: "プライバシーポリシー | Usagi Blog",
@@ -50,8 +52,28 @@ export default function PrivacyPolicyPage() {
         当サイトではアクセス解析ツールとして以下を利用しています：
       </p>
       <ul>
-        <li>Google Analytics</li>
-        <li>Google Search Console</li>
+        <li>
+          <Link
+            href="https://marketingplatform.google.com/about/analytics/terms/jp/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-blue-600 hover:underline"
+          >
+            Google Analytics
+            <FontAwesomeIcon icon={faExternalLinkAlt} className="w-3 h-3" />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="https://policies.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-blue-600 hover:underline"
+          >
+            Google Search Console
+            <FontAwesomeIcon icon={faExternalLinkAlt} className="w-3 h-3" />
+          </Link>
+        </li>
       </ul>
       <p>
         これらのツールは Cookie を用いて利用者の行動を分析する場合がありますが、個人を特定する情報は取得しません。

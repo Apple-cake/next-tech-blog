@@ -10,6 +10,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import Footer from "@/components/layout/Footer";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://usagi-blog.vercel.app"),
