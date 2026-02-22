@@ -59,7 +59,7 @@ export default function RootLayout({
 
         {/* ページ内容 */}
         <main className="bg-zinc-50">
-          <div className="mx-auto max-w-6xl">{children}</div>
+          <div className="mx-auto">{children}</div>
         </main>
 
         {/* フッター */}

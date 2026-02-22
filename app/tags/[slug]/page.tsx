@@ -23,10 +23,10 @@ export default async function TagPage({ params }: Props) {
   );
 
   return (
-    <main className="max-w-7xl mx-auto px-6 py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
+    <main className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
 
-        <section className="lg:col-span-3">
+        <section className="md:col-span-3">
           {/* パンくず */}
           <Breadcrumb
             items={[
@@ -41,8 +41,8 @@ export default async function TagPage({ params }: Props) {
           />
         </section>
         {/* サイドバー */}
-        <aside className="lg:col-span-1">
-          <div className="lg:sticky lg:top-12">
+        <aside className="md:col-span-1">
+          <div className="md:sticky md:top-12">
             <ProfileCard />
           </div>
         </aside>

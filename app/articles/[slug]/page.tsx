@@ -16,6 +16,7 @@ import Link from "next/link";
 import { extractHeadings } from "@/lib/toc";
 import TableOfContents from "@/components/article/TableOfContents";
 import BackToTopButton from "@/components/common/BackToTopButton";
+import MobileTocBar from "@/components/article/MobileTocBar";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -85,9 +86,12 @@ export default async function ArticlePage({ params }: Props) {
   );
 
   return (
+    <>
+    {/* スマホ固定バー */}
+    <MobileTocBar items={toc} />
     <article className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
-        <section className="lg:col-span-3">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <section className="md:col-span-3">
           {/* パンくず */}
           <Breadcrumb
             items={[
@@ -161,14 +165,17 @@ export default async function ArticlePage({ params }: Props) {
           </nav>
         </section>
         {/* サイドバー */}
-        <aside className="lg:col-span-1">
-          <div className="lg:sticky lg:top-12">
+        <aside className="md:col-span-1">
+          <div className="md:sticky md:top-12">
             <ProfileCard />
-            <TableOfContents items={toc} />
+            <div className="hidden md:block">
+              <TableOfContents items={toc} />
+            </div>
           </div>
         </aside>
       </div>
       <BackToTopButton />
     </article>
+    </>
   );
 }

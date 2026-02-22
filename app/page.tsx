@@ -17,17 +17,17 @@ export default function Home() {
       {/* ヒーローセクション */}
       <HeroSection />
       {/* コンテンツエリア */}
-      <div className="max-w-7xl mx-auto px-6 py-10">
+      <div className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
         <div
           className="
             grid
             grid-cols-1
-            lg:grid-cols-4
+            md:grid-cols-4
             gap-10
           "
         >
           {/* 記事一覧 */}
-          <section id="articles" className="lg:col-span-3">
+          <section id="articles" className="md:col-span-3">
             <ArticleList
               articles={articles}
               title="新着記事"
@@ -35,8 +35,8 @@ export default function Home() {
           </section>
 
           {/* サイドバー */}
-          <aside className="lg:col-span-1">
-            <div className="lg:sticky lg:top-12">
+          <aside className="md:col-span-1">
+            <div className="md:sticky md:top-12">
               <ProfileCard />
             </div>
           </aside>
