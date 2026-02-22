@@ -10,6 +10,7 @@ import {
   getAdjacentArticles,
 } from "@/features/articles";
 import TagBadge from "@/components/article/TagBadge";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import ProfileCard from "@/components/profile/ProfileCard";
 import Link from "next/link";
 
@@ -69,23 +70,12 @@ export default async function ArticlePage({ params }: Props) {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
         <section className="lg:col-span-3">
           {/* パンくず */}
-          <nav
-            aria-label="Breadcrumb"
-            className="hidden md:flex mb-6 text-sm text-zinc-500 flex items-center gap-2"
-          >
-            <Link
-              href="/"
-              className="hover:underline"
-            >
-              Usagi Blog
-            </Link>
-
-            <span>&gt;</span>
-
-            <span className="text-zinc-700">
-              {article.title}
-            </span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: "Usagi Blog", href: "/" },
+              { label: article.title },
+            ]}
+          />
           {/* タグ一覧 */}
           <div className="mb-8 flex flex-wrap gap-2">
             {article.tags.map((tag) => (
@@ -151,6 +141,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </nav>
         </section>
+        {/* サイドバー */}
         <aside className="lg:col-span-1">
           <div className="lg:sticky lg:top-12">
             <ProfileCard />

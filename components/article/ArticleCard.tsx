@@ -50,19 +50,19 @@ export default function ArticleCard({ article }: Props) {
         duration-200
       "
     >
-      {/* Tags */}
+      {/* タグ */}
       <div className="mb-3 flex flex-wrap gap-2">
         {article.tags.map((tag) => (
           <TagBadge key={tag.slug} label={tag.name} slug={tag.slug} />
         ))}
       </div>
 
-      {/* Title */}
+      {/* タイトル */}
       <h3 className="mb-2 text-xl font-semibold text-zinc-900">
         {article.title}
       </h3>
 
-      {/* Description */}
+      {/* 説明 */}
       <p className="mb-4 text-sm text-zinc-600 line-clamp-3">
         {article.description}
       </p>

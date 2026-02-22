@@ -19,7 +19,7 @@ export default function ArticleList({ articles, title }: Props) {
         {title}
       </h2>
 
-      {/* 縦並び */}
+      {/* 記事カード */}
       <div className="flex flex-col gap-6">
         {articles.map((article) => (
           <ArticleCard key={article.slug} article={article} />

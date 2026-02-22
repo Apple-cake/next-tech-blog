@@ -26,7 +26,7 @@ export default function Home() {
             gap-10
           "
         >
-          {/* 記事一覧エリア */}
+          {/* 記事一覧 */}
           <section id="articles" className="lg:col-span-3">
             <ArticleList
               articles={articles}

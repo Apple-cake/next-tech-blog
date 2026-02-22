@@ -5,6 +5,7 @@
 import { articles } from "@/lib/articles";
 import { tags } from "@/lib/tags";
 import ArticleList from "@/components/article/ArticleList";
+import Breadcrumb from "@/components/common/Breadcrumb";
 import ProfileCard from "@/components/profile/ProfileCard";
 
 type Props = {
@@ -26,12 +27,20 @@ export default async function TagPage({ params }: Props) {
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
 
         <section className="lg:col-span-3">
+          {/* パンくず */}
+          <Breadcrumb
+            items={[
+              { label: "Usagi Blog", href: "/" },
+              { label: `# ${label} の記事` },
+            ]}
+          />
+          {/* 記事一覧 */}
           <ArticleList
             articles={filtered}
             title={`# ${label} の記事`}
           />
         </section>
-
+        {/* サイドバー */}
         <aside className="lg:col-span-1">
           <div className="lg:sticky lg:top-12">
             <ProfileCard />
