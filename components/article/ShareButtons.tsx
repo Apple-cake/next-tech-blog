@@ -42,6 +42,57 @@ export default function ShareButtons({ title }: Props) {
   return (
     <div className="mt-16 pt-8">
       <div className="flex gap-4 justify-end">
+        {/* コピーアイコン */}
+        <button
+          onClick={handleCopy}
+          className={`${baseStyle} relative`}
+          aria-label="リンクをコピー"
+        >
+          {/* 吹き出し */}
+          {visible && (
+            <span
+              className={`
+                absolute
+                -top-6
+                left-1/2
+                -translate-x-1/2
+                bg-zinc-800
+                text-white
+                text-xs
+                px-2
+                py-1
+                rounded-md
+                whitespace-nowrap
+                pointer-events-none
+                ${copied ? "tooltip-enter" : "tooltip-exit"}
+              `}
+            >
+              リンクをコピーしました
+              <span
+                className="
+                  absolute
+                  left-1/2
+                  -translate-x-1/2
+                  top-[calc(100%-4px)]
+                  w-2
+                  h-2
+                  bg-zinc-800
+                  rotate-45
+                "
+              />
+            </span>
+          )}
+
+          <svg
+            viewBox="0 0 27 27"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-7 h-7"
+          >
+            <path d="M9.6 23.9c-3.6 0-6.5-3-6.5-6.6 0-1.7.7-3.4 1.9-4.6l2.3-2.3c.5-.4 1.2-.4 1.6.1.4.4.4 1 0 1.5l-2.3 2.3c-1.7 1.7-1.7 4.4 0 6.1s4.4 1.7 6.1 0l2.3-2.3c.5-.4 1.2-.4 1.6.1.4.4.4 1 0 1.5L14.3 22c-1.3 1.2-2.9 1.9-4.7 1.9Zm1-6.4c-.6 0-1.1-.5-1.1-1.1 0-.3.1-.6.3-.8l5.8-5.8c.4-.4 1.1-.4 1.6 0 .4.4.4 1.1 0 1.6l-5.8 5.8c-.2.2-.5.3-.8.3Zm8.3-.6c-.3 0-.6-.1-.8-.3-.4-.4-.4-1.1 0-1.6l2.3-2.3c1.7-1.7 1.7-4.4 0-6.1-1.7-1.7-4.4-1.7-6.1 0L12 8.9c-.5.4-1.2.4-1.6-.1-.4-.4-.4-1 0-1.5L12.7 5c2.6-2.6 6.7-2.6 9.2 0s2.6 6.7 0 9.2l-2.3 2.4c-.2.2-.5.3-.7.3Z" />
+          </svg>
+        </button>
+
         {/* X (Twitter) */}
         <a
           href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
@@ -103,57 +154,6 @@ export default function ShareButtons({ title }: Props) {
             />
           </svg>
         </a>
-
-        {/* コピーアイコン */}
-        <button
-          onClick={handleCopy}
-          className={`${baseStyle} relative`}
-          aria-label="リンクをコピー"
-        >
-          {/* 吹き出し */}
-          {visible && (
-            <span
-              className={`
-                absolute
-                -top-6
-                left-1/2
-                -translate-x-1/2
-                bg-zinc-800
-                text-white
-                text-xs
-                px-2
-                py-1
-                rounded-md
-                whitespace-nowrap
-                pointer-events-none
-                ${copied ? "tooltip-enter" : "tooltip-exit"}
-              `}
-            >
-              リンクをコピーしました
-              <span
-                className="
-                  absolute
-                  left-1/2
-                  -translate-x-1/2
-                  top-[calc(100%-4px)]
-                  w-2
-                  h-2
-                  bg-zinc-800
-                  rotate-45
-                "
-              />
-            </span>
-          )}
-
-          <svg
-            viewBox="0 0 27 27"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-7 h-7"
-          >
-            <path d="M9.6 23.9c-3.6 0-6.5-3-6.5-6.6 0-1.7.7-3.4 1.9-4.6l2.3-2.3c.5-.4 1.2-.4 1.6.1.4.4.4 1 0 1.5l-2.3 2.3c-1.7 1.7-1.7 4.4 0 6.1s4.4 1.7 6.1 0l2.3-2.3c.5-.4 1.2-.4 1.6.1.4.4.4 1 0 1.5L14.3 22c-1.3 1.2-2.9 1.9-4.7 1.9Zm1-6.4c-.6 0-1.1-.5-1.1-1.1 0-.3.1-.6.3-.8l5.8-5.8c.4-.4 1.1-.4 1.6 0 .4.4.4 1.1 0 1.6l-5.8 5.8c-.2.2-.5.3-.8.3Zm8.3-.6c-.3 0-.6-.1-.8-.3-.4-.4-.4-1.1 0-1.6l2.3-2.3c1.7-1.7 1.7-4.4 0-6.1-1.7-1.7-4.4-1.7-6.1 0L12 8.9c-.5.4-1.2.4-1.6-.1-.4-.4-.4-1 0-1.5L12.7 5c2.6-2.6 6.7-2.6 9.2 0s2.6 6.7 0 9.2l-2.3 2.4c-.2.2-.5.3-.7.3Z" />
-          </svg>
-        </button>
       </div>
     </div>
   );
