@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function ProfileCard() {
   return (
-    <section className="md:mt-0" aria-labelledby="profile-heading">
+    <section className="md:mt-0 mb-0" aria-labelledby="profile-heading">
       <div className="w-full md:max-w-xs rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
 
         {/* Avatar */}
