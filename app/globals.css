@@ -37,7 +37,7 @@ h2 {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   padding-left: 1rem;
-  border-left: 4px solid #b8d0ed;
+  border-left: 4px solid #4f8ecf;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -64,8 +64,8 @@ h3::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    #b8d0ed,
-    #f1f1f1
+    #4f8ecf,
+    #b8d0ed
   );
   border-radius: 9999px;
 }
@@ -85,9 +85,9 @@ h3::after {
   overflow: hidden;
   background: linear-gradient(
     180deg,
-    #f1f1f1,
+    #f9f9f9,
     #b8d0ed,
-    #f5fffa
+    #f9f9f9
   );
   background-size: 200% 200%;
 }
