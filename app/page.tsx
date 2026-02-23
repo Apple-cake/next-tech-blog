@@ -18,16 +18,9 @@ export default function Home() {
       <HeroSection />
       {/* コンテンツエリア */}
       <div className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
-        <div
-          className="
-            grid
-            grid-cols-1
-            md:grid-cols-4
-            gap-10
-          "
-        >
+        <div className="flex flex-col md:flex-row gap-10">
           {/* 記事一覧 */}
-          <section id="articles" className="md:col-span-3">
+          <section id="articles" className="flex-1 min-w-0">
             <ArticleList
               articles={articles}
               title="新着記事"
@@ -35,7 +28,7 @@ export default function Home() {
           </section>
 
           {/* サイドバー */}
-          <aside className="md:col-span-1">
+          <aside className="w-full md:w-[260px] shrink-0">
             <div className="md:sticky md:top-12">
               <ProfileCard />
             </div>
