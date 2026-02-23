@@ -12,18 +12,18 @@ type Props = {
 
 export default function Sidebar({ toc }: Props) {
   return (
-    <aside className="w-full md:w-[265px] shrink-0">
-      <div className="md:sticky md:top-12 space-y-8">
-        {/* プロフィール */}
-        <ProfileCard />
+    <aside className="w-full md:w-[265px] shrink-0 space-y-8">
 
-        {/* 目次 */}
-        {toc && toc.length > 0 && (
-          <div className="hidden md:block">
-            <TableOfContents items={toc} />
-          </div>
-        )}
-      </div>
+      {/* プロフィール */}
+      <ProfileCard />
+
+      {/* 目次 */}
+      {toc && toc.length > 0 && (
+        <div className="hidden md:block md:sticky md:top-12">
+          <TableOfContents items={toc} />
+        </div>
+      )}
+
     </aside>
   );
 }
