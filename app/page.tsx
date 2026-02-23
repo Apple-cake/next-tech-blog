@@ -1,14 +1,13 @@
 /**
  * Usagi Blog トップページ
  *
- * レスポンシブ2カラム構成
  * PC：記事一覧 + 右サイドバー
  * SP：縦並び（記事 → プロフィール）
  */
 
 import ArticleList from "@/components/article/ArticleList";
 import HeroSection from "@/components/layout/HeroSection";
-import ProfileCard from "@/components/profile/ProfileCard";
+import Sidebar from "@/components/layout/Sidebar";
 import { articles } from "@/lib/articles";
 
 export default function Home() {
@@ -26,13 +25,8 @@ export default function Home() {
               title="新着記事"
             />
           </section>
-
           {/* サイドバー */}
-          <aside className="w-full md:w-[260px] shrink-0">
-            <div className="md:sticky md:top-12">
-              <ProfileCard />
-            </div>
-          </aside>
+          <Sidebar />
         </div>
       </div>
     </>

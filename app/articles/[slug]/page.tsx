@@ -9,14 +9,13 @@ import {
   getAllArticles,
   getAdjacentArticles,
 } from "@/features/articles";
-import TagBadge from "@/components/article/TagBadge";
-import Breadcrumb from "@/components/common/Breadcrumb";
-import ProfileCard from "@/components/profile/ProfileCard";
-import Link from "next/link";
 import { extractHeadings } from "@/lib/toc";
-import TableOfContents from "@/components/article/TableOfContents";
-import BackToTopButton from "@/components/common/BackToTopButton";
+import Link from "next/link";
 import MobileTocBar from "@/components/article/MobileTocBar";
+import TagBadge from "@/components/article/TagBadge";
+import BackToTopButton from "@/components/common/BackToTopButton";
+import Breadcrumb from "@/components/common/Breadcrumb";
+import Sidebar from "@/components/layout/Sidebar";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -165,14 +164,7 @@ export default async function ArticlePage({ params }: Props) {
             </nav>
           </section>
           {/* サイドバー */}
-          <aside className="w-full md:w-[260px] shrink-0">
-            <div className="md:sticky md:top-12">
-              <ProfileCard />
-              <div className="hidden md:block">
-                <TableOfContents items={toc} />
-              </div>
-            </div>
-          </aside>
+          <Sidebar toc={toc} />
         </div>
         <BackToTopButton />
       </article>

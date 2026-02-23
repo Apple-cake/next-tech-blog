@@ -6,7 +6,7 @@ import { articles } from "@/lib/articles";
 import { tags } from "@/lib/tags";
 import ArticleList from "@/components/article/ArticleList";
 import Breadcrumb from "@/components/common/Breadcrumb";
-import ProfileCard from "@/components/profile/ProfileCard";
+import Sidebar from "@/components/layout/Sidebar";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -40,11 +40,7 @@ export default async function TagPage({ params }: Props) {
           />
         </section>
         {/* サイドバー */}
-        <aside className="w-full md:w-[260px] shrink-0">
-          <div className="md:sticky md:top-12">
-            <ProfileCard />
-          </div>
-        </aside>
+        <Sidebar />
       </div>
     </main>
   );
