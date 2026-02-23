@@ -12,6 +12,7 @@ import {
 import { extractHeadings } from "@/lib/toc";
 import Link from "next/link";
 import MobileTocBar from "@/components/article/MobileTocBar";
+import ShareButtons from "@/components/article/ShareButtons";
 import TagBadge from "@/components/article/TagBadge";
 import BackToTopButton from "@/components/common/BackToTopButton";
 import Breadcrumb from "@/components/common/Breadcrumb";
@@ -121,6 +122,8 @@ export default async function ArticlePage({ params }: Props) {
               className="prose prose-zinc prose-pre:overflow-x-auto prose-pre:bg-zinc-100 prose-pre:p-4 prose-pre:rounded-lg max-w-none"
               dangerouslySetInnerHTML={{ __html: contentWithIds }}
             />
+            {/* シェアボタン */}
+            <ShareButtons title={article.title} />
             {/* 前後記事ナビ */}
             <hr className="my-12 border-zinc-200" />
 
