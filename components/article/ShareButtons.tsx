@@ -11,6 +11,7 @@ type Props = {
 
 export default function ShareButtons({ title }: Props) {
   const [copied, setCopied] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   const url =
     typeof window !== "undefined"
@@ -22,8 +23,17 @@ export default function ShareButtons({ title }: Props) {
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(url);
+
+    setVisible(true);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+
+    setTimeout(() => {
+      setCopied(false); // フェードアウト開始
+    }, 1200);
+
+    setTimeout(() => {
+      setVisible(false); // DOMから削除
+    }, 1350);
   };
 
   const baseStyle =
@@ -97,9 +107,44 @@ export default function ShareButtons({ title }: Props) {
         {/* コピーアイコン */}
         <button
           onClick={handleCopy}
-          className={baseStyle}
+          className={`${baseStyle} relative`}
           aria-label="リンクをコピー"
         >
+          {/* 吹き出し */}
+          {visible && (
+            <span
+              className={`
+                absolute
+                -top-6
+                left-1/2
+                -translate-x-1/2
+                bg-zinc-800
+                text-white
+                text-xs
+                px-2
+                py-1
+                rounded-md
+                whitespace-nowrap
+                pointer-events-none
+                ${copied ? "tooltip-enter" : "tooltip-exit"}
+              `}
+            >
+              リンクをコピーしました
+              <span
+                className="
+                  absolute
+                  left-1/2
+                  -translate-x-1/2
+                  top-[calc(100%-4px)]
+                  w-2
+                  h-2
+                  bg-zinc-800
+                  rotate-45
+                "
+              />
+            </span>
+          )}
+
           <svg
             viewBox="0 0 27 27"
             fill="currentColor"
@@ -110,12 +155,6 @@ export default function ShareButtons({ title }: Props) {
           </svg>
         </button>
       </div>
-
-      {copied && (
-        <p className="text-xs text-zinc-500 mt-3">
-          リンクをコピーしました
-        </p>
-      )}
     </div>
   );
 }
