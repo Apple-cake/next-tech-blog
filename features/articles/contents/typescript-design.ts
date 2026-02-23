@@ -6,7 +6,6 @@ export const typescriptDesign: Article = {
   description:
     "大規模開発に耐えうるTypeScriptの型設計手法を実例付きで紹介します。",
   publishedAt: "2026.02.15",
-  readingTime: "7分",
   tags: [
     { name: "TypeScript", slug: "typescript" },
     { name: "設計", slug: "design" },

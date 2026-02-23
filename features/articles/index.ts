@@ -15,7 +15,6 @@ export type Article = {
   title: string;
   description: string;
   publishedAt: string;
-  readingTime: string;
   content: string;
   tags: Tag[];
 };

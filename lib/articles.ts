@@ -12,7 +12,6 @@ export type Article = {
   title: string;
   description: string;
   publishedAt: string;
-  readingTime: string;
   tags: Tag[];
 };
 
@@ -23,7 +22,6 @@ export const articles: Article[] = [
     description:
       "App Routerを活用した、スケーラブルで保守性の高いフロントエンド設計の考え方を解説します。",
     publishedAt: "2026.02.18",
-    readingTime: "5分",
     tags: [
       { name: "Next.js", slug: "nextjs" },
       { name: "設計", slug: "design" },
@@ -36,7 +34,6 @@ export const articles: Article[] = [
     description:
       "大規模開発に耐えうるTypeScriptの型設計手法を実例付きで紹介します。",
     publishedAt: "2026.02.15",
-    readingTime: "7分",
     tags: [
       { name: "TypeScript", slug: "typescript" },
       { name: "設計", slug: "design" },
@@ -49,7 +46,6 @@ export const articles: Article[] = [
     description:
       "レンダリング最適化・メモ化・構造設計の観点からパフォーマンス改善を解説。",
     publishedAt: "2026.02.12",
-    readingTime: "6分",
     tags: [
       { name: "React", slug: "react" },
       { name: "パフォーマンス", slug: "performance" },
@@ -61,7 +57,6 @@ export const articles: Article[] = [
     description:
       "依存関係の方向を意識した責務分離設計の実践方法を具体例で説明します。",
     publishedAt: "2026.02.08",
-    readingTime: "8分",
     tags: [
       { name: "設計", slug: "design" },
       { name: "アーキテクチャ", slug: "architecture" },
@@ -73,7 +68,6 @@ export const articles: Article[] = [
     description:
       "ユーザー中心設計の考え方と実践的アプローチをまとめました。",
     publishedAt: "2026.02.05",
-    readingTime: "4分",
     tags: [
       { name: "UI", slug: "ui" },
       { name: "UX", slug: "ux" },

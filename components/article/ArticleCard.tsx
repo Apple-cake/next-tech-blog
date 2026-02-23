@@ -18,7 +18,6 @@ export type Article = {
   title: string;
   description: string;
   publishedAt: string;
-  readingTime: string;
   tags: Tag[];
 };
 
@@ -64,7 +63,6 @@ export default function ArticleCard({ article }: Props) {
       {/* Meta info */}
       <div className="flex justify-between text-xs text-zinc-500">
         <span>{article.publishedAt}</span>
-        <span>{article.readingTime}</span>
       </div>
     </Link>
   );

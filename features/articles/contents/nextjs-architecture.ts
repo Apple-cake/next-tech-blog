@@ -6,7 +6,6 @@ export const nextjsArchitecture: Article = {
   description:
     "App Routerを活用した実務レベルの設計戦略を体系的に解説します。",
   publishedAt: "2026.02.18",
-  readingTime: "5分",
   tags: [
     { name: "Next.js", slug: "nextjs" },
     { name: "設計", slug: "design" },

@@ -6,7 +6,6 @@ export const reactPerformance: Article = {
   description:
     "レンダリング最適化・メモ化・構造設計の観点からパフォーマンス改善を解説。",
   publishedAt: "2026.02.12",
-  readingTime: "6分",
   tags: [
     { name: "React", slug: "react" },
     { name: "パフォーマンス", slug: "performance" },

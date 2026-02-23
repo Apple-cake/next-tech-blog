@@ -117,7 +117,6 @@ export default async function ArticlePage({ params }: Props) {
               <h1 className="text-3xl font-bold">{article.title}</h1>
               <div className="text-sm text-zinc-500 mt-2 flex gap-4">
                 <span>{article.publishedAt}</span>
-                <span>{article.readingTime}</span>
               </div>
             </header>
             {/* 本文 */}
