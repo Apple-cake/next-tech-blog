@@ -4,6 +4,7 @@
  * 記事目次
  */
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { TocItem } from "@/lib/toc";
 
@@ -12,66 +13,135 @@ type Props = {
   onItemClick?: () => void;
 };
 
-const scrollToHeading = (id: string) => {
-  const el = document.getElementById(id);
-  if (!el) return;
-
-  const isMobile = window.innerWidth < 768;
-
-  // 見出しの位置をそのままtopにもってくると、見切れたり余白が狭かったりするため調整
-  if (isMobile) {
-    const offset = 70; // モバイルバー高さ
-    const position =
-      el.getBoundingClientRect().top + window.scrollY - offset;
-
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
-  } else {
-    const offset = 20; // topに余白を設ける
-    const position =
-      el.getBoundingClientRect().top + window.scrollY - offset;
-
-    window.scrollTo({
-      top: position,
-      behavior: "smooth",
-    });
-  }
-};
-
 export default function TableOfContents({
   items,
   onItemClick,
 }: Props) {
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  useEffect(() => {
+    const elements = items
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -60% 0px",
+        threshold: 0,
+      }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+
+    return () => {
+      elements.forEach((el) => observer.unobserve(el));
+    };
+  }, [items]);
+
+  const scrollToHeading = (id: string) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const isMobile = window.innerWidth < 768;
+    const offset = isMobile ? 70 : 20;
+
+    const position =
+      el.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({
+      top: position,
+      behavior: "smooth",
+    });
+  };
+
   if (!items.length) return null;
 
   return (
     <div className="md:mt-10 md:border-t md:pt-6">
-      <p className="text-sm font-semibold mb-4 tracking-wide text-zinc-700">
+      <p className="text-sm font-semibold mb-6 tracking-wide text-zinc-700">
         目次
       </p>
 
-      <ul className="space-y-2 text-sm">
-        {items.map((item) => (
-          <li
-            key={item.id}
-            className={item.level === 3 ? "ml-4" : ""}
-          >
-            <Link
-              href={`#${item.id}`}
-              onClick={(e) => {
-                e.preventDefault();        // デフォルトのジャンプを止める
-                onItemClick?.();           // ポップアップを閉じる
-                scrollToHeading(item.id);  // 自前でスクロール制御
-              }}
-              className="text-zinc-500 hover:text-zinc-900 transition-colors"
-            >
-              {item.text}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="relative pl-6">
+        {/* 縦線 */}
+        <div className="absolute left-2 top-[4px] bottom-0 h-[calc(100%-8px)] w-[2px] bg-[#b8d0ed]" />
+
+        <ul className="space-y-4 text-sm">
+          {items.map((item) => {
+            const isActive = activeId === item.id;
+            const isH2 = item.level === 2;
+
+            return (
+              <li
+                key={item.id}
+                className={`relative ${
+                  isH2 ? "pl-0" : "pl-4"
+                }`}
+              >
+                {/* 丸 */}
+                <span
+                  className={`
+                    absolute -left-[15px] top-[4px]
+                    -translate-x-1/2
+                    rounded-full
+                    transition-all duration-200
+                    ${
+                      isActive
+                        ? "bg-[#4f8ecf] "
+                        : "bg-[#b8d0ed] border-2 border-zinc-50"
+                    }
+                    ${
+                      isH2
+                        ? "w-3 h-3"
+                        : "w-2 h-2"
+                    }
+                    ${
+                      isH2
+                        ? isActive
+                          ? "border-2 border-[#b8d0ed] scale-120"
+                          : ""
+                        : isActive
+                          ? "border-0"
+                          : ""
+                    }
+                  `}
+                />
+
+                <Link
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onItemClick?.();
+                    scrollToHeading(item.id);
+                  }}
+                  className={`
+                    transition-colors
+                    ${
+                      isActive
+                        ? "text-zinc-900"
+                        : "text-zinc-400 hover:text-zinc-900"
+                    }
+                    ${
+                      isH2
+                        ? "font-semibold"
+                        : "font-normal"
+                    }
+                  `}
+                >
+                  {item.text}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
