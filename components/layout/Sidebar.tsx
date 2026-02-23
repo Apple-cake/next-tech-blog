@@ -12,7 +12,7 @@ type Props = {
 
 export default function Sidebar({ toc }: Props) {
   return (
-    <aside className="w-full md:w-[260px] shrink-0">
+    <aside className="w-full md:w-[265px] shrink-0">
       <div className="md:sticky md:top-12 space-y-8">
         {/* プロフィール */}
         <ProfileCard />

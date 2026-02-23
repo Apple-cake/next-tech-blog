@@ -31,13 +31,13 @@ export default function ProfileCard() {
 
           {/* コメント */}
           <p className="text-sm text-zinc-600 leading-relaxed">
-            TypeScriptを中心にフロントエンド開発をしています。
+            Vue / React / TypeScript
             <br />
-            より良いUI・UXを考えるのが好きです。
+            UI設計やデザイン実装が好きです。
           </p>
 
           {/* 外部リンク */}
-          <div className="flex gap-4 mt-4">
+          <div className="flex gap-4">
             <a
               href="https://github.com/"
               target="_blank"
