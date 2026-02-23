@@ -8,9 +8,11 @@ import {
   getArticleBySlug,
   getAllArticles,
   getAdjacentArticles,
+  getRelatedArticles,
 } from "@/features/articles";
 import { extractHeadings } from "@/lib/toc";
 import Link from "next/link";
+import ArticleCard from "@/components/article/ArticleCard";
 import MobileTocBar from "@/components/article/MobileTocBar";
 import ShareButtons from "@/components/article/ShareButtons";
 import TagBadge from "@/components/article/TagBadge";
@@ -62,6 +64,7 @@ export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
 
   const article = getArticleBySlug(slug);
+  const relatedArticles = getRelatedArticles(slug, 3);
 
   if (!article) {
     return notFound();
@@ -165,6 +168,23 @@ export default async function ArticlePage({ params }: Props) {
                 )}
               </div>
             </nav>
+            {/* 関連記事 */}
+            {relatedArticles.length > 0 && (
+              <section className="mt-16">
+                <p className="text-lg font-semibold mb-6">
+                  関連記事
+                </p>
+
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {relatedArticles.map((article) => (
+                    <ArticleCard
+                      key={article.slug}
+                      article={article}
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
           </section>
           {/* サイドバー */}
           <Sidebar toc={toc} />

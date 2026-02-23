@@ -58,3 +58,33 @@ export function getAdjacentArticles(slug: string) {
     next: articles[index - 1] ?? null, // 新しい記事
   };
 }
+
+/**
+ * 同じタグを持つ関連記事を取得
+ */
+export function getRelatedArticles(
+  slug: string,
+  max = 3
+) {
+  const all = getAllArticles();
+  const current = getArticleBySlug(slug);
+
+  if (!current) return [];
+
+  // 現在記事のタグslug一覧
+  const currentTagSlugs = current.tags.map((t) => t.slug);
+
+  // 同タグ記事抽出（自分は除外）
+  const related = all.filter((article) => {
+    if (article.slug === slug) return false;
+
+    return article.tags.some((tag) =>
+      currentTagSlugs.includes(tag.slug)
+    );
+  });
+
+  // ランダムシャッフル
+  const shuffled = related.sort(() => 0.5 - Math.random());
+
+  return shuffled.slice(0, max);
+}
