@@ -13,6 +13,7 @@ import {
 import { extractHeadings } from "@/lib/toc";
 import Link from "next/link";
 import ArticleCard from "@/components/article/ArticleCard";
+import ArticleContent from "@/components/article/ArticleContent";
 import MobileTocBar from "@/components/article/MobileTocBar";
 import ShareButtons from "@/components/article/ShareButtons";
 import TagBadge from "@/components/article/TagBadge";
@@ -121,9 +122,10 @@ export default async function ArticlePage({ params }: Props) {
             </header>
             {/* 本文 */}
             <div
-              className="prose prose-zinc prose-pre:overflow-x-auto prose-pre:bg-zinc-100 prose-pre:p-4 prose-pre:rounded-lg max-w-none"
-              dangerouslySetInnerHTML={{ __html: contentWithIds }}
-            />
+              className="prose prose-zinc prose-pre:overflow-x-auto prose-pre:p-4 prose-pre:rounded-lg max-w-none"
+            >
+              <ArticleContent content={contentWithIds} />
+            </div>
             {/* シェアボタン */}
             <ShareButtons title={article.title} />
             {/* 前後記事ナビ */}
