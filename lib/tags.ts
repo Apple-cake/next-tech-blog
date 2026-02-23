@@ -8,4 +8,6 @@ export const tags = [
   { name: "UI", slug: "ui" },
   { name: "UX", slug: "ux" },
   { name: "プロダクト", slug: "product" },
+  { name: "JavaScript", slug: "javascript" },
+  { name: "CSS", slug: "css" },
 ];

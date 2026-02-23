@@ -22,12 +22,14 @@ export type Article = {
 import { nextjsArchitecture } from "./contents/nextjs-architecture";
 import { typescriptDesign } from "./contents/typescript-design";
 import { reactPerformance } from "./contents/react-performance";
+import { scrollChangeCss } from "./contents/javascript-scroll-change-cs";
 // 記事が増えたらここにimport追加
 
 export const articles: Article[] = [
   nextjsArchitecture,
   typescriptDesign,
   reactPerformance,
+  scrollChangeCss,
 ];
 
 /**

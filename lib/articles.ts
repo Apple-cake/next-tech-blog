@@ -52,6 +52,17 @@ export const articles: Article[] = [
     ],
   },
   {
+    slug: "javascript-scroll-change-css",
+    title: "JavaScriptでスクロール位置に応じてCSSを変更する方法",
+    description:
+      "scrollイベントとIntersectionObserverを使って、スクロール位置に応じてスタイルを変更する実装方法を解説。",
+    publishedAt: "2026.02.23",
+    tags: [
+      { name: "JavaScript", slug: "javascript" },
+      { name: "CSS", slug: "css" },
+    ],
+  },
+  {
     slug: "clean-architecture",
     title: "フロントエンドにおけるClean Architecture",
     description:
