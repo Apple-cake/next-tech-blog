@@ -19,24 +19,24 @@ export default function ProfileCard() {
             className="rounded-full mb-4"
           />
 
-          {/* Name */}
+          {/* 名前 */}
           <p id="profile-heading" className="text-xl font-semibold text-zinc-900">
             Usagi
           </p>
 
-          {/* Role */}
+          {/* 肩書き */}
           <p className="text-sm text-zinc-500 mb-4">
-            フロントエンドエンジニア / ブログ運営
+            フロントエンドエンジニア
           </p>
 
-          {/* Bio */}
+          {/* コメント */}
           <p className="text-sm text-zinc-600 leading-relaxed">
-            Next.js・TypeScript・Firebaseを中心に、
-            実務で得た知見や設計ノウハウを発信しています。
-            スケーラブルで保守性の高いプロダクト開発が得意です。
+            TypeScriptを中心にフロントエンド開発をしています。
+            <br />
+            より良いUI・UXを考えるのが好きです。
           </p>
 
-          {/* Links */}
+          {/* 外部リンク */}
           <div className="flex gap-4 mt-4">
             <a
               href="https://github.com/"
