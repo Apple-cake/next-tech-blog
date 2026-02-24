@@ -12,11 +12,11 @@ export default function ProfileCard() {
         {/* Avatar */}
         <div className="flex flex-col items-center text-center space-y-4">
           <Image
-            src="/images/avatar.png"
+            src="/avatar.svg"
             alt="プロフィール画像"
-            width={80}
-            height={80}
-            className="rounded-full mb-4"
+            width={90}
+            height={90}
+            className="rounded-full mb-0"
           />
 
           {/* 名前 */}

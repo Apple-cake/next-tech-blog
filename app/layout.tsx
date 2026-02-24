@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/avatar.png",
+        url: "/avatar.svg",
         width: 1200,
         height: 630,
       },
