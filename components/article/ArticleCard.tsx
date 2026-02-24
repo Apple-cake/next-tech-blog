@@ -32,20 +32,7 @@ export default function ArticleCard({ article }: Props) {
   return (
     <article
       onClick={() => router.push(`/articles/${article.slug}`)}
-      className="
-        block
-        rounded-xl
-        border
-        border-zinc-200
-        bg-white
-        p-6
-        shadow-sm
-        hover:shadow-md
-        hover:-translate-y-1
-        transition-all
-        duration-200
-        cursor-pointer
-      "
+      className="p-6 card-base card-base-hover"
     >
       {/* タグ */}
       <span className="mb-3 flex flex-wrap gap-2">

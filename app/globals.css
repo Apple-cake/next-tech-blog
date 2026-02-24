@@ -4,6 +4,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* ブランドカラー */
+  --color-primary: #00c8af;
+  --color-primary-light: #5adccd;
+  --color-primary-soft: #b4f0f0;
 }
 
 @theme inline {
@@ -37,7 +41,7 @@ h2 {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   padding-left: 1rem;
-  border-left: 4px solid #00c8af;
+  border-left: 4px solid var(--color-primary);
   position: relative;
 }
 @media (max-width: 768px) {
@@ -64,8 +68,8 @@ h3::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    #00c8af,
-    #b4f0f0
+    var(--color-primary),
+    var(--color-primary-soft)
   );
   border-radius: 9999px;
 }
@@ -86,7 +90,7 @@ h3::after {
   background: linear-gradient(
     180deg,
     #f9f9f9,
-    #b4f0f0,
+    var(--color-primary-soft),
     #f9f9f9
   );
   background-size: 200% 200%;
@@ -230,4 +234,23 @@ h3::after {
 
 .tooltip-exit {
   animation: fadeOut 0.15s ease-in forwards;
+}
+
+/* =========================
+  カードデザイン共通
+========================= */
+.card-base {
+  background-color: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08),
+              0 1px 2px -1px rgb(0 0 0 / 0.08);
+  transition: all 0.2s ease;
+}
+.card-base-hover {
+  cursor: pointer;
+}
+.card-base-hover:hover {
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.08);
+  transform: translateY(-4px);
 }

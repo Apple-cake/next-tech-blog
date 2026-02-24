@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6">
-      <h1 className="text-[120px] font-bold text-[#b8d0ed] opacity-30">
+    <div className="min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-2 pb-8">
+      <h1 className="text-[120px] font-bold text-[var(--color-primary-light)] opacity-30">
         404
       </h1>
 
@@ -17,7 +17,7 @@ export default function NotFound() {
 
       <Link
         href="/"
-        className="bg-[#4f8ecf] text-white px-6 py-2 rounded-lg hover:opacity-90 transition"
+        className="bg-[var(--color-primary)] text-white px-6 py-2 rounded-lg hover:opacity-90 transition"
       >
         トップページへ戻る
       </Link>

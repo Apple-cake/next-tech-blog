@@ -64,6 +64,9 @@ export async function generateMetadata(
 export default async function ArticlePage({ params }: Props) {
   const { slug } = await params;
 
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const articleUrl = `${baseUrl}/articles/${slug}`;
+
   const article = getArticleBySlug(slug);
   const relatedArticles = getRelatedArticles(slug, 3);
 
@@ -95,80 +98,87 @@ export default async function ArticlePage({ params }: Props) {
       <MobileTocBar items={toc} />
       <article className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
         <div className="flex flex-col md:flex-row gap-10">
-          <section className="flex-1 min-w-0">
-            {/* パンくず */}
-            <Breadcrumb
-              items={[
-                { label: "Usagi Blog", href: "/" },
-                { label: article.title },
-              ]}
-            />
-            {/* タグ一覧 */}
-            <div className="mb-8 flex flex-wrap gap-2">
-              {article.tags.map((tag) => (
-                <TagBadge
-                  key={tag.slug}
-                  label={tag.name}
-                  slug={tag.slug}
+          <section>
+            <div className="p-6 card-base">
+              <div className="flex-1 min-w-0">
+                {/* パンくず */}
+                <Breadcrumb
+                  items={[
+                    { label: "Usagi Blog", href: "/" },
+                    { label: article.title },
+                  ]}
                 />
-              ))}
+                {/* タグ一覧 */}
+                <div className="mb-8 flex flex-wrap gap-2">
+                  {article.tags.map((tag) => (
+                    <TagBadge
+                      key={tag.slug}
+                      label={tag.name}
+                      slug={tag.slug}
+                    />
+                  ))}
+                </div>
+                {/* 記事ヘッダー */}
+                <header className="mb-8">
+                  <h1 className="text-3xl font-bold">{article.title}</h1>
+                  <div className="text-sm text-zinc-500 mt-2 flex gap-4">
+                    <span>{article.publishedAt}</span>
+                  </div>
+                </header>
+                {/* 本文 */}
+                <div
+                  className="prose prose-zinc prose-pre:overflow-x-auto prose-pre:p-4 prose-pre:rounded-lg max-w-none"
+                >
+                  <ArticleContent content={contentWithIds} />
+                </div>
+                {/* シェアボタン */}
+                <ShareButtons
+                  title={article.title}
+                  url={articleUrl}
+                />
+                {/* 前後記事ナビ */}
+                <hr className="my-12 border-zinc-200" />
+
+                <nav className="grid grid-cols-2 gap-8 text-sm items-start">
+
+                  {/* 前の記事 */}
+                  <div className="text-left">
+                    {prev && (
+                      <Link
+                        href={`/articles/${prev.slug}`}
+                        className="flex flex-col gap-1 text-zinc-500 hover:text-zinc-900 transition-colors"
+                      >
+                        <span className="text-xs font-normal">
+                          過去の投稿
+                        </span>
+
+                        <span className="font-semibold leading-snug">
+                          {prev.title}
+                        </span>
+                      </Link>
+                    )}
+                  </div>
+
+                  {/* 次の記事 */}
+                  <div className="text-right">
+                    {next && (
+                      <Link
+                        href={`/articles/${next.slug}`}
+                        className="flex flex-col gap-1 text-zinc-500 hover:text-zinc-900 transition-colors"
+                      >
+                        <span className="text-xs font-normal">
+                          次の投稿
+                        </span>
+
+                        <span className="font-semibold leading-snug">
+                          {next.title}
+                        </span>
+                      </Link>
+                    )}
+                  </div>
+                </nav>
+              </div>
             </div>
-            {/* 記事ヘッダー */}
-            <header className="mb-8">
-              <h1 className="text-3xl font-bold">{article.title}</h1>
-              <div className="text-sm text-zinc-500 mt-2 flex gap-4">
-                <span>{article.publishedAt}</span>
-              </div>
-            </header>
-            {/* 本文 */}
-            <div
-              className="prose prose-zinc prose-pre:overflow-x-auto prose-pre:p-4 prose-pre:rounded-lg max-w-none"
-            >
-              <ArticleContent content={contentWithIds} />
-            </div>
-            {/* シェアボタン */}
-            <ShareButtons title={article.title} />
-            {/* 前後記事ナビ */}
-            <hr className="my-12 border-zinc-200" />
-
-            <nav className="grid grid-cols-2 gap-8 text-sm items-start">
-
-              {/* 前の記事 */}
-              <div className="text-left">
-                {prev && (
-                  <Link
-                    href={`/articles/${prev.slug}`}
-                    className="flex flex-col gap-1 text-zinc-500 hover:text-zinc-900 transition-colors"
-                  >
-                    <span className="text-xs font-normal">
-                      過去の投稿
-                    </span>
-
-                    <span className="font-semibold leading-snug">
-                      {prev.title}
-                    </span>
-                  </Link>
-                )}
-              </div>
-
-              {/* 次の記事 */}
-              <div className="text-right">
-                {next && (
-                  <Link
-                    href={`/articles/${next.slug}`}
-                    className="flex flex-col gap-1 text-zinc-500 hover:text-zinc-900 transition-colors"
-                  >
-                    <span className="text-xs font-normal">
-                      次の投稿
-                    </span>
-
-                    <span className="font-semibold leading-snug">
-                      {next.title}
-                    </span>
-                  </Link>
-                )}
-              </div>
-            </nav>
             {/* 関連記事 */}
             {relatedArticles.length > 0 && (
               <section className="mt-16">

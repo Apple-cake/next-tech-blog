@@ -70,12 +70,12 @@ export default function MobileTocBar({ items }: Props) {
       >
         <button
           onClick={() => setOpen(!open)}
-          className="flex items-center gap-2 font-xs text-zinc-500"
+          className="flex items-center gap-1 text-sm text-zinc-500"
         >
           目次
           <FontAwesomeIcon
             icon={open ? faChevronUp : faChevronDown}
-            className="text-sm"
+            className="text-xs"
           />
         </button>
       </div>
@@ -104,13 +104,10 @@ export default function MobileTocBar({ items }: Props) {
             }}
           >
             <div className="
-              bg-white
-              border border-zinc-200
-              shadow-xl
-              rounded-2xl
               px-5 py-5
               max-h-[60vh]
               overflow-y-auto
+              card-base
             ">
               <TableOfContents
                 onItemClick={() => setOpen(false)}

@@ -7,16 +7,12 @@ import { useState } from "react";
 
 type Props = {
   title: string;
+  url: string;
 };
 
-export default function ShareButtons({ title }: Props) {
+export default function ShareButtons({ title, url }: Props) {
   const [copied, setCopied] = useState(false);
   const [visible, setVisible] = useState(false);
-
-  const url =
-    typeof window !== "undefined"
-      ? window.location.href
-      : "";
 
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);

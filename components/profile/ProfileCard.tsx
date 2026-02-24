@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function ProfileCard() {
   return (
     <section className="md:mt-0 mb-0" aria-labelledby="profile-heading">
-      <div className="w-full md:max-w-xs rounded-xl border border-zinc-200 bg-white p-5 shadow-sm">
+      <div className="w-full md:max-w-xs p-5 card-base">
 
         {/* Avatar */}
         <div className="flex flex-col items-center text-center space-y-4">

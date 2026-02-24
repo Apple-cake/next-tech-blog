@@ -94,8 +94,8 @@ export default function TableOfContents({
                     transition-all duration-200
                     ${
                       isActive
-                        ? "bg-[#00c8af] "
-                        : "bg-[#b4f0f0] border-2 border-zinc-50"
+                        ? "bg-[var(--color-primary)] "
+                        : "bg-[var(--color-primary-soft)] border-2 border-zinc-50"
                     }
                     ${
                       isH2
@@ -105,7 +105,7 @@ export default function TableOfContents({
                     ${
                       isH2
                         ? isActive
-                          ? "border-2 border-[#b4f0f0] scale-120"
+                          ? "border-2 border-[var(--color-primary-soft)] scale-120"
                           : ""
                         : isActive
                           ? "border-transparent"
