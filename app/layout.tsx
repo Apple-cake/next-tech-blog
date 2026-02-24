@@ -8,7 +8,6 @@
 
 import type { Metadata } from "next";
 import "./globals.css";
-import Link from "next/link";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "@fortawesome/fontawesome-svg-core/styles.css";

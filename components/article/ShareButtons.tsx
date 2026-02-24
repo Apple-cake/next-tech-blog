@@ -37,7 +37,7 @@ export default function ShareButtons({ title }: Props) {
   };
 
   const baseStyle =
-  "w-10 h-10 flex items-center justify-center cursor-pointer transition-colors duration-200 text-zinc-400 hover:text-[#7fb6e6]";
+  "w-10 h-10 flex items-center justify-center cursor-pointer transition-colors duration-200 text-zinc-400 hover:text-[#00c8af]";
 
   return (
     <div className="mt-16 pt-8">

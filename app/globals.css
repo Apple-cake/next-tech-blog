@@ -37,7 +37,7 @@ h2 {
   margin-top: 4rem;
   margin-bottom: 1.5rem;
   padding-left: 1rem;
-  border-left: 4px solid #4f8ecf;
+  border-left: 4px solid #00c8af;
   position: relative;
 }
 @media (max-width: 768px) {
@@ -64,8 +64,8 @@ h3::after {
   height: 1px;
   background: linear-gradient(
     90deg,
-    #4f8ecf,
-    #b8d0ed
+    #00c8af,
+    #b4f0f0
   );
   border-radius: 9999px;
 }
@@ -86,7 +86,7 @@ h3::after {
   background: linear-gradient(
     180deg,
     #f9f9f9,
-    #b8d0ed,
+    #b4f0f0,
     #f9f9f9
   );
   background-size: 200% 200%;
@@ -186,8 +186,13 @@ h3::after {
 .hero-heading {
   display: inline-block;
   padding: 0.5rem 1rem 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(6px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.8),
+    #ffffff
+  );
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 

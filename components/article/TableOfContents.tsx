@@ -71,7 +71,7 @@ export default function TableOfContents({
 
       <div className="relative pl-6">
         {/* 縦線 */}
-        <div className="absolute left-2 top-[4px] bottom-0 h-[calc(100%-8px)] w-[2px] bg-[#b8d0ed]" />
+        <div className="absolute left-2 top-[4px] bottom-0 h-[calc(100%-8px)] w-[2px] bg-[#b4f0f0]" />
 
         <ul className="space-y-4 text-sm">
           {items.map((item) => {
@@ -94,8 +94,8 @@ export default function TableOfContents({
                     transition-all duration-200
                     ${
                       isActive
-                        ? "bg-[#4f8ecf] "
-                        : "bg-[#b8d0ed] border-2 border-zinc-50"
+                        ? "bg-[#00c8af] "
+                        : "bg-[#b4f0f0] border-2 border-zinc-50"
                     }
                     ${
                       isH2
@@ -105,7 +105,7 @@ export default function TableOfContents({
                     ${
                       isH2
                         ? isActive
-                          ? "border-2 border-[#b8d0ed] scale-120"
+                          ? "border-2 border-[#b4f0f0] scale-120"
                           : ""
                         : isActive
                           ? "border-0"
