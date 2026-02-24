@@ -108,7 +108,7 @@ export default function TableOfContents({
                           ? "border-2 border-[#b4f0f0] scale-120"
                           : ""
                         : isActive
-                          ? "border-0"
+                          ? "border-transparent"
                           : ""
                     }
                   `}

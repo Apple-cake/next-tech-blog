@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="border-b border-zinc-200 bg-white">
-      <div className="mx-auto max-w-6xl px-3 py-4 md:px-7">
+      <div className="mx-auto px-3 py-4 md:px-7">
         <h1 className="text-2xl font-bold">
           <Link
             href="/"
