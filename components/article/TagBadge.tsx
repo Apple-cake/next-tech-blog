@@ -16,9 +16,9 @@ export default function TagBadge({ label, slug }: Props) {
     inline-block
     rounded-full
     bg-zinc-100
-    px-3
-    py-1
-    text-xs
+    px-2 md:px-3
+    py-0.5 md:py-1
+    text-[10px] md:text-xs
     font-medium
     text-zinc-700
     transition-colors
