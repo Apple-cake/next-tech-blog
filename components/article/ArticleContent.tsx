@@ -1,4 +1,8 @@
-"use client"; // クライアントコンポーネント化
+"use client";
+
+/**
+ * 記事本文
+ */
 
 import { useEffect } from "react";
 import hljs from "highlight.js";

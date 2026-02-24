@@ -71,7 +71,7 @@ export default function TableOfContents({
 
       <div className="relative pl-6">
         {/* 縦線 */}
-        <div className="absolute left-2 top-[4px] bottom-0 h-[calc(100%-8px)] w-[2px] bg-[#b4f0f0]" />
+        <div className="absolute left-2 top-[4px] bottom-0 h-[calc(100%-8px)] w-[2px] bg-[var(--color-primary-soft)]" />
 
         <ul className="space-y-4 text-sm">
           {items.map((item) => {
