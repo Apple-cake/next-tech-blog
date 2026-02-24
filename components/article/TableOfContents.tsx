@@ -33,8 +33,8 @@ export default function TableOfContents({
         });
       },
       {
-        rootMargin: "-30% 0px -60% 0px",
-        threshold: 0,
+        rootMargin: "0px 0px -80% 0px",
+        threshold: 0.2,
       }
     );
 

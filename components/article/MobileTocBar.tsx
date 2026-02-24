@@ -85,33 +85,38 @@ export default function MobileTocBar({ items }: Props) {
       ====================== */}
       {open && (
         <div
-          className={`
-            z-50
-            ${isFixed ? "fixed" : "absolute"}
-          `}
-          style={{
-            top: isFixed
-              ? barHeight - 8 // fixed時：画面上端 + バー高さ
-              : barHeight - 8, // relative時：バー直下
-            left: "52%",
-            transform: "translateX(-50%)",
-            width: "90vw",
-            maxWidth: "90vw",
-          }}
+          className="fixed inset-0 z-50"
+          onClick={() => setOpen(false)} // 背景クリックで閉じる
         >
-          <div className="
-            bg-white
-            border border-zinc-200
-            shadow-xl
-            rounded-2xl
-            px-5 py-5
-            max-h-[60vh]
-            overflow-y-auto
-          ">
-            <TableOfContents
-              onItemClick={() => setOpen(false)}
-              items={items}
-            />
+          <div
+            className={`
+              z-50
+              ${isFixed ? "fixed" : "absolute"}
+            `}
+            style={{
+              top: isFixed
+                ? barHeight - 8 // fixed時：画面上端 + バー高さ
+                : barHeight - 8, // relative時：バー直下
+              left: "52%",
+              transform: "translateX(-50%)",
+              width: "90vw",
+              maxWidth: "90vw",
+            }}
+          >
+            <div className="
+              bg-white
+              border border-zinc-200
+              shadow-xl
+              rounded-2xl
+              px-5 py-5
+              max-h-[60vh]
+              overflow-y-auto
+            ">
+              <TableOfContents
+                onItemClick={() => setOpen(false)}
+                items={items}
+              />
+            </div>
           </div>
         </div>
       )}
