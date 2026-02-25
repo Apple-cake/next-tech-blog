@@ -34,8 +34,8 @@ export default function Home() {
       activeTab === "latest"
         ? articles
         : articles.filter((article) =>
-            article.tags.some((tag) => tag.slug === activeTab)
-          );
+          article.tags.some((tag) => tag.slug === activeTab)
+        );
 
     return base.slice(0, 5); // 最大5件
   }, [activeTab]);
@@ -47,9 +47,9 @@ export default function Home() {
       {/* コンテンツエリア */}
       <div className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
         <div className="flex flex-col md:flex-row gap-10">
-          <div className="w-full">
+          <div className="w-full pb-4 border-b border-zinc-200 md:pb-0 md:border-none">
             {/* タブUI */}
-            <div className="flex gap-6 border-b border-zinc-200">
+            <div className="flex gap-4 md:gap-8 border-b border-zinc-200">
               {tabs.map((tab) => {
                 const isActive = activeTab === tab.key;
 
@@ -58,11 +58,10 @@ export default function Home() {
                     key={tab.key}
                     onClick={() => setActiveTab(tab.key)}
                     className={`
-                      pb-3 text-sm md:text-base transition-colors
-                      ${
-                        isActive
-                          ? "border-b-2 border-[var(--color-primary)] text-zinc-900 font-semibold"
-                          : "text-zinc-400 hover:text-zinc-900"
+                      px-2 pb-2 text-sm md:text-lg transition-colors
+                      ${isActive
+                        ? "border-b-2 border-[var(--brand-500)] text-zinc-900 font-semibold"
+                        : "text-zinc-400 hover:text-zinc-900"
                       }
                     `}
                   >
@@ -88,7 +87,7 @@ export default function Home() {
                   className="
                     text-sm
                     font-medium
-                    text-[var(--color-primary)]
+                    text-[var(--brand-500)]
                     hover:underline
                   "
                 >
