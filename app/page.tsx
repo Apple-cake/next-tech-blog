@@ -11,7 +11,7 @@ import HeroSection from "@/components/layout/HeroSection";
 import Sidebar from "@/components/layout/Sidebar";
 import { articles } from "@/lib/articles";
 
-type TabKey = "latest" | "react" | "typescript" | "design";
+type TabKey = "latest" | "react" | "typescript" | "css";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabKey>("latest");
@@ -23,7 +23,7 @@ export default function Home() {
     { key: "latest", label: "新着" },
     { key: "react", label: "React" },
     { key: "typescript", label: "TypeScript" },
-    { key: "design", label: "設計" },
+    { key: "css", label: "CSS" },
   ];
 
   // ==========================
