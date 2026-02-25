@@ -23,6 +23,7 @@ import { nextjsArchitecture } from "./contents/nextjs-architecture";
 import { typescriptDesign } from "./contents/typescript-design";
 import { reactPerformance } from "./contents/react-performance";
 import { scrollChangeCss } from "./contents/javascript-scroll-change-css";
+import { gitStash } from "./contents/git-stash";
 // 記事が増えたらここにimport追加
 
 export const articles: Article[] = [
@@ -30,6 +31,7 @@ export const articles: Article[] = [
   typescriptDesign,
   reactPerformance,
   scrollChangeCss,
+  gitStash,
 ];
 
 /**
