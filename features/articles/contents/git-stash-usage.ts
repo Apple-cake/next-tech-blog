@@ -8,8 +8,6 @@ export const gitStash: Article = {
   publishedAt: "2026.02.25",
   tags: [
     { name: "Git", slug: "git" },
-    { name: "バージョン管理", slug: "version-control" },
-    { name: "開発効率化", slug: "development" },
   ],
   content: `
 <h2>git stashとは？</h2>

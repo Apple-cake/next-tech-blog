@@ -8,7 +8,6 @@ export const nextjsArchitecture: Article = {
   publishedAt: "2026.02.18",
   tags: [
     { name: "Next.js", slug: "nextjs" },
-    { name: "設計", slug: "design" },
     { name: "TypeScript", slug: "typescript" },
   ],
   content: `

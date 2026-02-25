@@ -8,8 +8,6 @@ export const typescriptDesign: Article = {
   publishedAt: "2026.02.15",
   tags: [
     { name: "TypeScript", slug: "typescript" },
-    { name: "設計", slug: "design" },
-    { name: "フロントエンド", slug: "frontend" },
   ],
   content: `
     <h2>なぜ型設計が重要なのか</h2>

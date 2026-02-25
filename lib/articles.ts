@@ -24,7 +24,6 @@ export const articles: Article[] = [
     publishedAt: "2026.02.18",
     tags: [
       { name: "Next.js", slug: "nextjs" },
-      { name: "設計", slug: "design" },
       { name: "TypeScript", slug: "typescript" },
     ],
   },
@@ -36,8 +35,6 @@ export const articles: Article[] = [
     publishedAt: "2026.02.15",
     tags: [
       { name: "TypeScript", slug: "typescript" },
-      { name: "設計", slug: "design" },
-      { name: "フロントエンド", slug: "frontend" },
     ],
   },
   {
@@ -70,8 +67,6 @@ export const articles: Article[] = [
     publishedAt: "2026.02.23",
     tags: [
       { name: "Git", slug: "git" },
-      { name: "バージョン管理", slug: "version-control" },
-      { name: "開発効率化", slug: "development" },
     ],
   },
   {
@@ -81,7 +76,6 @@ export const articles: Article[] = [
       "依存関係の方向を意識した責務分離設計の実践方法を具体例で説明します。",
     publishedAt: "2026.02.08",
     tags: [
-      { name: "設計", slug: "design" },
       { name: "アーキテクチャ", slug: "architecture" },
     ],
   },
@@ -92,9 +86,7 @@ export const articles: Article[] = [
       "ユーザー中心設計の考え方と実践的アプローチをまとめました。",
     publishedAt: "2026.02.05",
     tags: [
-      { name: "UI", slug: "ui" },
-      { name: "UX", slug: "ux" },
-      { name: "プロダクト", slug: "product" },
+      { name: "UI/UX", slug: "ui-ux" },
     ],
   },
 ];
