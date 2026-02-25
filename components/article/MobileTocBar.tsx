@@ -84,10 +84,11 @@ export default function MobileTocBar({ items }: Props) {
         目次ポップアップ
       ====================== */}
       {open && (
-        <div
-          className="fixed inset-0 z-50"
-          onClick={() => setOpen(false)} // 背景クリックで閉じる
-        >
+        <>
+          <div
+            className="fixed inset-0 z-50"
+            onClick={() => setOpen(false)} // 背景クリックで閉じる
+          />
           <div
             className={`
               z-50
@@ -115,7 +116,7 @@ export default function MobileTocBar({ items }: Props) {
               />
             </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
