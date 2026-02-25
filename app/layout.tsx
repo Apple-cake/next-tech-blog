@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://usagi-blog.vercel.app",
   },
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-touch-icon.png",
+  },
   robots: {
     index: true,
     follow: true,
