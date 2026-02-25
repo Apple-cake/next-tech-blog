@@ -11,8 +11,8 @@ export default function HeroSection() {
         left-1/2
         -translate-x-1/2
         overflow-hidden
-        pt-16
-        pb-10
+        pt-12
+        pb-8
         md:pt-24
         md:pb-16
         md:mb-4
