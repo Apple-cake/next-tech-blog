@@ -26,11 +26,16 @@ export type Article = {
 
 type Props = {
   article: Article;
+  variant?: "list" | "related";
 };
 
-export default function ArticleCard({ article }: Props) {
+export default function ArticleCard({
+  article,
+  variant = "list",
+}: Props) {
   const router = useRouter();
   const imageSrc = article.image ?? "/default-eyecatch.svg";
+  const isRelated = variant == "related";
   return (
     <article
       onClick={() => router.push(`/articles/${article.slug}`)}
@@ -41,18 +46,21 @@ export default function ArticleCard({ article }: Props) {
         p-4 md:p-5
       "
     >
-      <div className="flex flex-col flex-row gap-4 md:gap-5">
+      <div className={`flex gap-4 md:gap-5 ${isRelated ? "md:flex-col" : "md:flex-row"}`}>
         {/* 画像エリア */}
         <div
-          className="
+          className={`
             relative
-            h-20 md:h-30
-            w-20 md:w-30
             aspect-square
             shrink-0
             overflow-hidden
             self-center
-          "
+            ${
+              isRelated
+                ? "h-20 w-20 md:w-full md:h-36"
+                : "h-20 w-20 md:h-28 md:w-28"
+            }
+          `}
         >
           <Image
             src={imageSrc}

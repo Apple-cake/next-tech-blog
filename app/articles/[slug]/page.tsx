@@ -186,11 +186,12 @@ export default async function ArticlePage({ params }: Props) {
                   関連記事
                 </p>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                   {relatedArticles.map((article) => (
                     <ArticleCard
                       key={article.slug}
                       article={article}
+                      variant="related"
                     />
                   ))}
                 </div>
