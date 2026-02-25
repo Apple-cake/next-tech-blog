@@ -4,6 +4,7 @@
  * Usagi Blog トップページ
  */
 
+import Link from "next/link";
 import { useMemo, useState } from "react";
 import ArticleList from "@/components/article/ArticleList";
 import HeroSection from "@/components/layout/HeroSection";
@@ -29,14 +30,16 @@ export default function Home() {
   // フィルタロジック
   // ==========================
   const filteredArticles = useMemo(() => {
-    if (activeTab === "latest") {
-      return articles;
-    }
+    const base =
+      activeTab === "latest"
+        ? articles
+        : articles.filter((article) =>
+            article.tags.some((tag) => tag.slug === activeTab)
+          );
 
-    return articles.filter((article) =>
-      article.tags.some((tag) => tag.slug === activeTab)
-    );
+    return base.slice(0, 5); // 最大5件
   }, [activeTab]);
+
   return (
     <>
       {/* ヒーローセクション */}
@@ -74,6 +77,26 @@ export default function Home() {
                 articles={filteredArticles}
                 title=""
               />
+              {/* もっと見る */}
+              <div className="mt-8 text-right">
+                <Link
+                  href={
+                    activeTab === "latest"
+                      ? "/articles"
+                      : `/tags/${activeTab}`
+                  }
+                  className="
+                    text-sm
+                    font-medium
+                    text-[var(--color-primary)]
+                    hover:underline
+                  "
+                >
+                  {activeTab === "latest"
+                    ? "すべての記事を見る →"
+                    : `${tabs.find(t => t.key === activeTab)?.label}の記事をすべて見る →`}
+                </Link>
+              </div>
             </section>
           </div>
           {/* サイドバー */}
