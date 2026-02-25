@@ -15,7 +15,7 @@ export default function HeroSection() {
         pb-10
         md:pt-24
         md:pb-16
-        mb-8
+        md:mb-4
       "
     >
       {/* 背景 */}
