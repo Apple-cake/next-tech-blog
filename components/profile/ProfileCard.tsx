@@ -21,7 +21,7 @@ export default function ProfileCard() {
 
           {/* 名前 */}
           <p id="profile-heading" className="text-xl font-semibold text-zinc-900">
-            Usagi
+            Ryo Aiba
           </p>
 
           {/* 肩書き */}

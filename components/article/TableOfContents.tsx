@@ -64,7 +64,7 @@ export default function TableOfContents({
   if (!items.length) return null;
 
   return (
-    <div className="md:mt-10 md:border-t md:pt-6">
+    <div className="md:mt-10 md:pt-6">
       <p className="text-sm font-semibold mb-6 tracking-wide text-zinc-700">
         目次
       </p>
