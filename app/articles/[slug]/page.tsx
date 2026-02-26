@@ -120,7 +120,7 @@ export default async function ArticlePage({ params }: Props) {
                 </div>
                 {/* 記事ヘッダー */}
                 <header className="mb-8">
-                  <h1 className="text-3xl font-bold">{article.title}</h1>
+                  <h1 className="text-2xl md:text-3xl font-bold">{article.title}</h1>
                   <div className="text-sm text-zinc-500 mt-2 flex gap-4">
                     <span>{article.publishedAt}</span>
                   </div>

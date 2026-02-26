@@ -1,6 +1,6 @@
 import { Article } from "../index";
 
-export const scrollChangeCss: Article = {
+export const javascriptScrollChangeCss: Article = {
   slug: "javascript-scroll-change-css",
   title: "JavaScriptでスクロール位置に応じてCSSを変更する方法",
   description:

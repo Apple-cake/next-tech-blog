@@ -1,6 +1,6 @@
 import { Article } from "../index";
 
-export const gitStash: Article = {
+export const gitStashUsage: Article = {
   slug: "git-stash-usage",
   title: "Git stash の使い方完全ガイド",
   description:
