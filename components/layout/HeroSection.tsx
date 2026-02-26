@@ -12,9 +12,9 @@ export default function HeroSection() {
         -translate-x-1/2
         overflow-hidden
         pt-12
-        pb-8
+        pb-6
         md:pt-24
-        md:pb-16
+        md:pb-10
         md:mb-4
       "
     >
@@ -29,16 +29,18 @@ export default function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         <div className="max-w-3xl">
-          <h1 className="relative text-2xl md:text-5xl font-bold mb-2 leading-tight hero-heading">
-            設計で、
-          </h1>
-          <h1 className="relative text-2xl md:text-5xl font-bold mb-6 leading-tight hero-heading">
-            プロダクトは進化する。
-          </h1>
+          <blockquote className="relative mb-4 md:mb-8">
+            <span className="absolute -left-2 -top-2 md:-left-6 md:-top-6 text-6xl md:text-[140px] text-zinc-200 font-serif select-none">
+              ”
+            </span>
+            <h1 className="text-2xl md:text-6xl font-bold leading-tight  italic tracking-tight hero-heading">
+              Design is how it works.
+            </h1>
+          </blockquote>
 
           <p className="text-zinc-600 text-sm md:text-lg leading-relaxed">
-            フロントエンド設計・TypeScript・Reactアーキテクチャを中心に、
-            スケーラブルな開発の思考法を発信しています。
+            UI設計・TypeScriptを中心に、<br/>
+            技術的な気づきや備忘録をまとめています。
           </p>
         </div>
       </div>
