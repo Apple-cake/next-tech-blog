@@ -42,6 +42,15 @@ export function getArticleBySlug(slug: string) {
 }
 
 /**
+ * タグ別記事一覧取得
+ */
+export function getArticlesByTag(slug: string) {
+  return articles.filter((article) =>
+    article.tags.some((tag) => tag.slug === slug)
+  );
+}
+
+/**
  * 全記事取得（SSG用）
  */
 export function getAllArticles() {

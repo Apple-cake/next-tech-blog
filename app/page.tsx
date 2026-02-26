@@ -9,7 +9,7 @@ import { useMemo, useState } from "react";
 import ArticleList from "@/components/article/ArticleList";
 import HeroSection from "@/components/layout/HeroSection";
 import Sidebar from "@/components/layout/Sidebar";
-import { articles } from "@/lib/articles";
+import { getAllArticles } from "@/features/articles";
 
 type TabKey = "latest" | "react" | "typescript" | "css";
 
@@ -29,6 +29,7 @@ export default function Home() {
   // ==========================
   // フィルタロジック
   // ==========================
+  const articles = getAllArticles();
   const filteredArticles = useMemo(() => {
     const base =
       activeTab === "latest"

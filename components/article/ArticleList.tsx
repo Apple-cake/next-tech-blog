@@ -1,9 +1,9 @@
 /**
- * 最新記事一覧
+ * 記事一覧
  */
 
 import ArticleCard from "./ArticleCard";
-import { Article } from "@/lib/articles";
+import { Article } from "@/features/articles";
 
 type Props = {
   articles: Article[];
@@ -13,19 +13,16 @@ type Props = {
 export default function ArticleList({ articles, title }: Props) {
   return (
     <section className="max-w-4xl mx-auto">
-
-      {/* セクションタイトル */}
+      {/* タイトル */}
       <p className="text-2xl font-bold mb-8">
         {title}
       </p>
-
       {/* 記事カード */}
       <div className="flex flex-col gap-6">
         {articles.map((article) => (
           <ArticleCard key={article.slug} article={article} />
         ))}
       </div>
-
     </section>
   );
 }

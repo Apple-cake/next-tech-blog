@@ -1,7 +1,5 @@
 /**
  * プライバシーポリシーページ
- *
- * /privacy URL で表示
  */
 
 import Link from "next/link";
