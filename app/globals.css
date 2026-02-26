@@ -5,7 +5,9 @@
   --background: #ffffff;
   --foreground: #171717;
   /* ブランドカラー */
-  --brand-100:  #ECFFFB;
+  --brand-50:  #F4FFFD;
+  --brand-100: #ECFFFB;
+  --brand-150: #DFFCF7;
   --brand-200: #CFF9F3;
   --brand-300: #9FEFE3;
   --brand-400: #4ED9C8;
