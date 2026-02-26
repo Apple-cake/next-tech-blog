@@ -3,6 +3,7 @@
  */
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProfileCard() {
   return (
@@ -38,23 +39,18 @@ export default function ProfileCard() {
 
           {/* 外部リンク */}
           <div className="flex gap-4">
-            <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
+            <Link
+              href="https://github.com/RyoAiba"
+              className="flex items-center transition-opacity"
             >
-              GitHub
-            </a>
-
-            <a
-              href="https://twitter.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-zinc-700 hover:text-zinc-900 transition-colors"
-            >
-              Twitter
-            </a>
+              <Image
+                src="/github-logo.svg"
+                alt="GitHub Logo"
+                width={36}
+                height={36}
+                className="md:w-8 md:h-8"
+              />
+            </Link>
           </div>
 
         </div>
