@@ -25,6 +25,7 @@ import { reactPerformance } from "./contents/react-performance";
 import { javascriptScrollChangeCss } from "./contents/javascript-scroll-change-css";
 import { gitStashUsage } from "./contents/git-stash-usage";
 import { whitespaceDesign } from "./contents/whitespace-design";
+import { cssAnimationMethods } from "./contents/css-animation-methods";
 // 記事が増えたらここにimport追加
 
 export const articles: Article[] = [
@@ -34,6 +35,7 @@ export const articles: Article[] = [
   javascriptScrollChangeCss,
   gitStashUsage,
   whitespaceDesign,
+  cssAnimationMethods,
 ];
 
 /**
