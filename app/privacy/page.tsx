@@ -14,7 +14,7 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <main className="max-w-7xl mx-auto px-6 md:px-10 py-10 prose prose-zinc prose-sm md:prose-base leading-relaxed">
-      <h1>プライバシーポリシー</h1>
+      <h1 className="text-2xl md:text-3xl">プライバシーポリシー</h1>
 
       <p>
         Usagi Blog（以下「当サイト」といいます）は、利用者のプライバシーを尊重し、個人情報の保護に努めています。

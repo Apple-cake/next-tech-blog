@@ -93,13 +93,13 @@ export default async function ArticlePage({ params }: Props) {
   );
 
   return (
-    <>
+    <div className="bg-white md:bg-zinc-50">
       {/* スマホ固定バー */}
       <MobileTocBar items={toc} />
-      <article className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
+      <article className="max-w-7xl mx-auto px-4 md:pl-10 md:pr-4 py-6 md:py-10">
         <div className="flex flex-col md:flex-row gap-10">
           <section>
-            <div className="p-6 card-base">
+            <div className="md:p-8 article-card-base">
               <div className="flex-1 min-w-0">
                 {/* パンくず */}
                 <Breadcrumb
@@ -109,7 +109,7 @@ export default async function ArticlePage({ params }: Props) {
                   ]}
                 />
                 {/* タグ一覧 */}
-                <div className="mb-8 flex flex-wrap gap-2">
+                <div className="mb-4 md:mb-8 flex flex-wrap gap-2">
                   {article.tags.map((tag) => (
                     <TagBadge
                       key={tag.slug}
@@ -119,7 +119,7 @@ export default async function ArticlePage({ params }: Props) {
                   ))}
                 </div>
                 {/* 記事ヘッダー */}
-                <header className="mb-8">
+                <header className="mb-0">
                   <h1 className="text-2xl md:text-3xl font-bold">{article.title}</h1>
                   <div className="text-sm text-zinc-500 mt-2 flex gap-4">
                     <span>{article.publishedAt}</span>
@@ -137,7 +137,7 @@ export default async function ArticlePage({ params }: Props) {
                   url={articleUrl}
                 />
                 {/* 前後記事ナビ */}
-                <hr className="my-12 border-zinc-200" />
+                <hr className="my-4 md:my-8 border-zinc-200" />
 
                 <nav className="grid grid-cols-2 gap-8 text-sm items-start">
 
@@ -203,6 +203,6 @@ export default async function ArticlePage({ params }: Props) {
         </div>
         <BackToTopButton />
       </article>
-    </>
+    </div>
   );
 }
