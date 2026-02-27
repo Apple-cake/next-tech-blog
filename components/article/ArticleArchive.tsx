@@ -3,7 +3,7 @@
  */
 
 import ArticleList from "./ArticleList";
-import Breadcrumb from "@/components/common/Breadcrumb";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import Sidebar from "@/components/layout/Sidebar";
 import { Article } from "@/features/articles";
 

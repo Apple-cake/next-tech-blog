@@ -17,8 +17,8 @@ import ArticleContent from "@/components/article/ArticleContent";
 import MobileTocBar from "@/components/article/MobileTocBar";
 import ShareButtons from "@/components/article/ShareButtons";
 import TagBadge from "@/components/article/TagBadge";
-import BackToTopButton from "@/components/common/BackToTopButton";
-import Breadcrumb from "@/components/common/Breadcrumb";
+import BackToTopButton from "@/components/ui/BackToTopButton";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import Sidebar from "@/components/layout/Sidebar";
 
 type Props = {

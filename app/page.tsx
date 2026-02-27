@@ -3,7 +3,7 @@
  */
 
 import HomeClient from "@/components/home/HomeClient";
-import HeroSection from "@/components/layout/HeroSection";
+import HeroSection from "@/components/home/HeroSection";
 import Sidebar from "@/components/layout/Sidebar";
 import { articles } from "@/features/articles";
 
