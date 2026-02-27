@@ -1,3 +1,5 @@
+import { getUpdatedAt } from "@/lib/getUpdatedAt";
+
 /**
  * タグ型
  */
@@ -8,15 +10,17 @@ export type Tag = {
 };
 
 /**
- * 記事型定義
+ * 記事型
  */
 export type Article = {
   slug: string;
   title: string;
   description: string;
   publishedAt: string;
+  updatedAt?: string;
   content: string;
   tags: Tag[];
+  image?: string;
 };
 
 import { nextjsArchitecture } from "./content/nextjs-architecture";
@@ -29,7 +33,10 @@ import { cssAnimationMethods } from "./content/css-animation-methods";
 import { buttonDesignBasics } from "./content/button-design-basics";
 // 記事が増えたらここにimport追加
 
-export const articles: Article[] = [
+/**
+ * 生記事配列
+ */
+const rawArticles = [
   nextjsArchitecture,
   typescriptDesign,
   reactPerformance,
@@ -39,6 +46,24 @@ export const articles: Article[] = [
   cssAnimationMethods,
   buttonDesignBasics,
 ];
+
+/**
+ * updatedAtを追加した記事配列
+ */
+export const articles: Article[] = rawArticles.map((article) => {
+  return {
+    ...article,
+    updatedAt: (() => {
+      try {
+        return getUpdatedAt(
+          `features/articles/content/${article.slug}.ts`
+        );
+      } catch {
+        return article.publishedAt;
+      }
+    })(),
+  };
+});
 
 /**
  * slugから記事取得

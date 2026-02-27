@@ -122,6 +122,11 @@ export default async function ArticlePage({ params }: Props) {
                 <header className="mb-12">
                   <h1 className="text-2xl md:text-3xl font-bold">{article.title}</h1>
                   <div className="text-sm text-zinc-500 mt-2 flex gap-4">
+                    {article.updatedAt !== article.publishedAt ? (
+                      <span></span>  // TODO:更新アイコン
+                    ) : (
+                      <span></span>  // TODO:新規アイコン
+                    )}
                     <span>{article.publishedAt}</span>
                   </div>
                 </header>

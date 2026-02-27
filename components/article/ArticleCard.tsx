@@ -7,21 +7,12 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import TagBadge from "./TagBadge";
+import type { Article } from "@/features/articles";
 
 // タグ型
 export type Tag = {
   name: string; // 表示用
   slug: string; // URL用
-};
-
-// 記事型
-export type Article = {
-  slug: string;
-  title: string;
-  description: string;
-  publishedAt: string;
-  tags: Tag[];
-  image?: string;
 };
 
 type Props = {
@@ -88,7 +79,12 @@ export default function ArticleCard({
 
           {/* メタ */}
           <div className="text-xs text-zinc-500">
-            {article.publishedAt}
+            {article.updatedAt !== article.publishedAt ? (
+              <span></span>  // TODO:更新アイコン
+            ) : (
+              <span></span>  // TODO:新規アイコン
+            )}
+            <span>{article.updatedAt}</span>
           </div>
         </div>
       </div>
