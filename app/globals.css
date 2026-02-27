@@ -39,24 +39,24 @@ body {
 ========================= */
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   line-height: 1.6;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
-  padding-left: 1rem;
+  padding-left: 0.75rem;
   border-left: 4px solid var(--brand-500);
   position: relative;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   h2 {
-    font-size: 1.25rem;
-    padding-left: 0.75rem;
+    font-size: 1.5rem;
+    padding-left: 1rem;
   }
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -77,9 +77,9 @@ h3::after {
   );
   border-radius: 9999px;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   h3 {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
 }
 
@@ -266,5 +266,30 @@ h3::after {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.08),
                 0 1px 2px -1px rgb(0 0 0 / 0.08);
     transition: all 0.2s ease;
+  }
+}
+
+/* =========================
+  Code Block
+========================= */
+pre {
+  padding: 0;
+  margin: 1.5rem 0;
+  background: #151e2c;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+}
+pre code {
+  display: block;
+  padding: 1.25rem !important;
+  color: #e1e4e8 !important;
+  font-size: 0.75rem;
+  line-height: 1.7;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: transparent;
+}
+@media (min-width: 768px) {
+  pre code {
+    font-size: 0.875rem;
   }
 }
