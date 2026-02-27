@@ -7,7 +7,7 @@ export const whitespaceDesign: Article = {
     "余白デザインは見た目の美しさだけでなく、読みやすさや視線誘導、コンバージョン率にも影響します。本記事ではUI設計における余白の本質と実践的な活用法を解説します。",
   publishedAt: "2026.02.15",
   tags: [
-    { name: "UI/UX", slug: "ui-ux" },
+    { name: "UI", slug: "ui" },
   ],
   content: `
     <p><strong>「余白」</strong>は、単なる“空いているスペース”ではありません。<br />

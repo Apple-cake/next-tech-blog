@@ -7,7 +7,7 @@ export const buttonDesignBasics: Article = {
     "UI初心者でもすぐ実践できるボタンデザインの基本原則をわかりやすく解説。色・余白・優先度・状態設計まで丁寧に紹介します。",
   publishedAt: "2026.02.27",
   tags: [
-    { name: "UI/UX", slug: "ui-ux" },
+    { name: "UI", slug: "ui" },
   ],
   content: `
 <h2>なぜボタン設計がそんなに重要なのか</h2>

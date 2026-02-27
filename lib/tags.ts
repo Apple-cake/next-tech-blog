@@ -10,5 +10,5 @@ export const tags = [
   // テーマ
   { name: "パフォーマンス", slug: "performance" },
   { name: "アーキテクチャ", slug: "architecture" },
-  { name: "UI/UX", slug: "ui-ux" },
+  { name: "UI", slug: "ui" },
 ];
