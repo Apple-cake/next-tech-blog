@@ -3,7 +3,7 @@ import { Article } from "../index";
 export const cssAnimationMethods: Article = {
   slug: "css-animation-methods",
   title:
-    "【保存版】CSSアニメーションの作り方完全ガイド｜@keyframes・animationの使い方と実用サンプル集",
+    "CSSアニメーション@keyframesで動くUIをサクッと作る",
   description:
     "CSSアニメーションの作り方を初心者向けに解説。@keyframesの基本からanimationプロパティの使い方、よく使うサンプルコードまでわかりやすく紹介します。",
   publishedAt: "2026.02.26",
@@ -25,8 +25,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>@keyframesの書き方</h3>
 
-<pre><code class="language-css">
-@keyframes fadeIn {
+<pre><code class="language-css">@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -40,8 +39,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>animationを要素に適用する</h3>
 
-<pre><code class="language-css">
-.box {
+<pre><code class="language-css">.box {
   animation-name: fadeIn;
   animation-duration: 2s;
 }
@@ -53,8 +51,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>① フェードイン</h3>
 
-<pre><code class="language-css">
-@keyframes fadeIn {
+<pre><code class="language-css">@keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
@@ -66,8 +63,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>② スライドイン（下から）</h3>
 
-<pre><code class="language-css">
-@keyframes slideUp {
+<pre><code class="language-css">@keyframes slideUp {
   from {
     transform: translateY(40px);
     opacity: 0;
@@ -85,8 +81,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>③ ループアニメーション（ふわふわ）</h3>
 
-<pre><code class="language-css">
-@keyframes floating {
+<pre><code class="language-css">@keyframes floating {
   0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0); }
@@ -101,8 +96,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>animation-delay（開始タイミング）</h3>
 
-<pre><code class="language-css">
-.box {
+<pre><code class="language-css">.box {
   animation: fadeIn 1s ease;
   animation-delay: 2s;
 }
@@ -112,24 +106,21 @@ export const cssAnimationMethods: Article = {
 
     <h3>animation-iteration-count（繰り返し回数）</h3>
 
-<pre><code class="language-css">
-.box {
+<pre><code class="language-css">.box {
   animation: fadeIn 1s ease infinite;
 }
 </code></pre>
 
     <h3>animation-direction（往復再生）</h3>
 
-<pre><code class="language-css">
-.box {
+<pre><code class="language-css">.box {
   animation: floating 2s ease-in-out infinite alternate;
 }
 </code></pre>
 
     <h3>animation-timing-function（速度変化）</h3>
 
-<pre><code class="language-css">
-.box {
+<pre><code class="language-css">.box {
   animation: fadeIn 1s ease-in-out;
 }
 </code></pre>
@@ -167,8 +158,7 @@ export const cssAnimationMethods: Article = {
 
     <h3>複数アニメーションの指定</h3>
 
-<pre><code class="language-css">
-.box {
+<pre><code class="language-css">.box {
   animation: fadeIn 1s ease,
   floating 3s ease-in-out infinite;
 }

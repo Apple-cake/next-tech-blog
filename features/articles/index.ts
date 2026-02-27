@@ -19,13 +19,14 @@ export type Article = {
   tags: Tag[];
 };
 
-import { nextjsArchitecture } from "./contents/nextjs-architecture";
-import { typescriptDesign } from "./contents/typescript-design";
-import { reactPerformance } from "./contents/react-performance";
-import { javascriptScrollChangeCss } from "./contents/javascript-scroll-change-css";
-import { gitStashUsage } from "./contents/git-stash-usage";
-import { whitespaceDesign } from "./contents/whitespace-design";
-import { cssAnimationMethods } from "./contents/css-animation-methods";
+import { nextjsArchitecture } from "./content/nextjs-architecture";
+import { typescriptDesign } from "./content/typescript-design";
+import { reactPerformance } from "./content/react-performance";
+import { javascriptScrollChangeCss } from "./content/javascript-scroll-change-css";
+import { gitStashUsage } from "./content/git-stash-usage";
+import { whitespaceDesign } from "./content/whitespace-design";
+import { cssAnimationMethods } from "./content/css-animation-methods";
+import { buttonDesignBasics } from "./content/button-design-basics";
 // 記事が増えたらここにimport追加
 
 export const articles: Article[] = [
@@ -36,6 +37,7 @@ export const articles: Article[] = [
   gitStashUsage,
   whitespaceDesign,
   cssAnimationMethods,
+  buttonDesignBasics,
 ];
 
 /**
