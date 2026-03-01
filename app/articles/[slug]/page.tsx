@@ -98,7 +98,7 @@ export default async function ArticlePage({ params }: Props) {
       <MobileTocBar items={toc} />
       <article className="max-w-7xl mx-auto px-4 md:pl-10 md:pr-4 py-6 md:py-10">
         <div className="flex flex-col md:flex-row gap-10">
-          <section>
+          <section className="w-full">
             <div className="md:p-8 article-card-base">
               <div className="flex-1 min-w-0">
                 {/* パンくず */}

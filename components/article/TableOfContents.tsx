@@ -64,8 +64,8 @@ export default function TableOfContents({
   if (!items.length) return null;
 
   return (
-    <div className="md:mt-10 md:pt-6">
-      <p className="text-sm font-semibold mb-6 tracking-wide text-zinc-700">
+    <div className="md:pt-4">
+      <p className="text-sm font-semibold mb-6 pb-2 tracking-wide text-zinc-500 border-b border-[var(--brand-500)]">
         目次
       </p>
 
@@ -94,7 +94,7 @@ export default function TableOfContents({
                     transition-all duration-200
                     ${
                       isActive
-                        ? "bg-[var(--brand-500)] "
+                        ? "bg-[var(--brand-500)]"
                         : "bg-[var(--brand-300)] border-2 border-zinc-50"
                     }
                     ${
