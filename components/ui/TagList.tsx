@@ -17,8 +17,8 @@ type Props = {
 
 export default function TagList({ maxHeight = "240px" }: Props) {
   return (
-    <div className="w-full md:pt-4">
-      <p className="text-sm font-semibold mt-4 mb-6 pb-2 tracking-wide text-zinc-500 border-b border-[var(--brand-500)]">
+    <div className="w-full mt-8 md:pt-4 md:mb-4">
+      <p className="text-lg md:text-sm font-semibold mb-6 md:pb-2 md:tracking-wide md:text-zinc-500 md:border-b md:border-[var(--brand-500)]">
         Tags
       </p>
 

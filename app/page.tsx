@@ -13,7 +13,7 @@ export default function Home() {
       {/* ヒーローセクション */}
       <HeroSection />
       {/* コンテンツエリア */}
-      <div className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">
+      <div className="max-w-7xl mx-auto px-4 md:pl-10 md:pr-4 py-6 md:py-10">
         <div className="flex flex-col md:flex-row gap-10">
           <HomeContent articles={articles} />
           {/* サイドバー */}

@@ -25,11 +25,6 @@ export default function ProfileCard() {
             Ryo Aiba
           </p>
 
-          {/* 肩書き */}
-          <p className="text-sm text-zinc-500 mb-4">
-            フロントエンドエンジニア
-          </p>
-
           {/* コメント */}
           <p className="text-sm text-zinc-600 leading-relaxed">
             Vue / React / TypeScript

@@ -15,6 +15,10 @@ export default function Sidebar({ toc }: Props) {
   return (
     <aside className="w-full md:w-[265px] shrink-0 space-y-8">
 
+      {/* タグ一覧 */}
+      <div className="md:hidden">
+        <TagList />
+      </div>
       {/* プロフィール */}
       <ProfileCard />
       {/* タグ一覧 */}

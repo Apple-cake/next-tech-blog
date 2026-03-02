@@ -65,7 +65,7 @@ export default function TableOfContents({
 
   return (
     <div className="md:pt-4">
-      <p className="text-sm font-semibold mb-6 pb-2 tracking-wide text-zinc-500 border-b border-[var(--brand-500)]">
+      <p className="text-sm font-semibold md:mb-6 pb-2 tracking-wide text-zinc-500 md:border-b md:border-[var(--brand-500)]">
         目次
       </p>
 

@@ -97,7 +97,7 @@ export default async function ArticlePage({ params }: Props) {
       {/* スマホ固定バー */}
       <MobileTocBar items={toc} />
       <article className="max-w-7xl mx-auto px-4 md:pl-10 md:pr-4 py-6 md:py-10">
-        <div className="flex flex-col md:flex-row gap-10">
+        <div className="flex flex-col md:flex-row md:gap-10">
           <section className="w-full">
             <div className="md:p-8 article-card-base">
               <div className="flex-1 min-w-0">
@@ -108,7 +108,7 @@ export default async function ArticlePage({ params }: Props) {
                     { label: article.title },
                   ]}
                 />
-                {/* タグ一覧 */}
+                {/* 記事タグ */}
                 <div className="mb-4 md:mb-8 flex flex-wrap gap-2">
                   {article.tags.map((tag) => (
                     <TagBadge
@@ -186,7 +186,7 @@ export default async function ArticlePage({ params }: Props) {
             </div>
             {/* 関連記事 */}
             {relatedArticles.length > 0 && (
-              <section className="mt-16">
+              <section className="mt-8 md:mt-16">
                 <p className="text-lg font-semibold mb-6">
                   関連記事
                 </p>
