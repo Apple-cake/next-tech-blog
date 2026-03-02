@@ -5,20 +5,18 @@ import Link from "next/link";
 import ArticleList from "@/components/article/ArticleList";
 import type { Article } from "@/features/articles";
 
-type TabKey = "latest" | "react" | "typescript" | "css";
-
 export default function HomeClient({
   articles,
 }: {
   articles: Article[];
 }) {
-  const [activeTab, setActiveTab] = useState<TabKey>("latest");
+  const [activeTab, setActiveTab] = useState<string>("latest");
   // タブ定義
-  const tabs: { key: TabKey; label: string }[] = [
+  const tabs: { key: string; label: string }[] = [
     { key: "latest", label: "新着" },
-    { key: "react", label: "React" },
     { key: "typescript", label: "TypeScript" },
     { key: "css", label: "CSS" },
+    { key: "ui", label: "UI" },
   ];
   // フィルタロジック
   const filteredArticles = useMemo(() => {

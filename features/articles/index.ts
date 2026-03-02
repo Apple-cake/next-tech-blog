@@ -37,6 +37,7 @@ import { cssPositionBasics } from "./content/css-position-basics";
 import { whatIsTypescript } from "./content/what-is-typescript";
 import { cssLayoutFlexGridDifference } from "./content/css-layout-flex-grid-difference";
 import { vuePerformanceOptimization } from "./content/vue-performance-optimization";
+import { uiVisualHierarchy } from "./content/ui-visual-hierarchy";
 // 記事が増えたらここにimport追加
 
 /**
@@ -57,6 +58,7 @@ const rawArticles = [
   whatIsTypescript,
   cssLayoutFlexGridDifference,
   vuePerformanceOptimization,
+  uiVisualHierarchy,
 ];
 
 /**
