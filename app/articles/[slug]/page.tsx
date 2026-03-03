@@ -5,8 +5,8 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import {
+  articles,
   getArticleBySlug,
-  getAllArticles,
   getAdjacentArticles,
   getRelatedArticles,
 } from "@/features/articles";
@@ -29,8 +29,6 @@ type Props = {
  * 静的生成対象のパスを指定
  */
 export async function generateStaticParams() {
-  const articles = getAllArticles();
-
   return articles.map((article) => ({
     slug: article.slug,
   }));

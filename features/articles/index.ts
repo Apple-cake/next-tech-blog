@@ -23,6 +23,15 @@ export type Article = {
   image?: string;
 };
 
+/**
+ * ページネーション結果型
+ */
+export type PaginatedArticles = {
+  articles: Article[];
+  totalPages: number;
+  currentPage: number;
+};
+
 import { nextjsArchitecture } from "./content/nextjs-architecture";
 import { typescriptDesign } from "./content/typescript-design";
 import { reactPerformance } from "./content/react-performance";
@@ -95,6 +104,26 @@ export const articles: Article[] = rawArticles.map((article) => {
 });
 
 /**
+ * 汎用ページネーション処理
+ */
+function paginate(
+  items: Article[],
+  page: number,
+  perPage: number
+): PaginatedArticles {
+  const totalPages = Math.ceil(items.length / perPage);
+
+  const start = (page - 1) * perPage;
+  const end = start + perPage;
+
+  return {
+    articles: items.slice(start, end),
+    totalPages,
+    currentPage: page,
+  };
+}
+
+/**
  * slugから記事取得
  */
 export function getArticleBySlug(slug: string) {
@@ -104,17 +133,41 @@ export function getArticleBySlug(slug: string) {
 /**
  * タグ別記事一覧取得
  */
-export function getArticlesByTag(slug: string) {
-  return articles.filter((article) =>
+// export function getArticlesByTag(slug: string) {
+//   return articles.filter((article) =>
+//     article.tags.some((tag) => tag.slug === slug)
+//   );
+// }
+
+/**
+ * タグ別記事一覧（ページネーション対応）
+ */
+export function getArticlesByTag(
+  slug: string,
+  page: number = 1,
+  perPage: number = 5
+): PaginatedArticles {
+  const filtered = articles.filter((article) =>
     article.tags.some((tag) => tag.slug === slug)
   );
+  return paginate(filtered, page, perPage);
 }
 
 /**
  * 全記事取得（SSG用）
  */
-export function getAllArticles() {
-  return articles;
+// export function getAllArticles() {
+//   return articles;
+// }
+
+/**
+ * 全記事一覧（ページネーション対応）
+ */
+export function getAllArticles(
+  page: number = 1,
+  perPage: number = 5
+): PaginatedArticles {
+  return paginate(articles, page, perPage);
 }
 
 /**
@@ -138,7 +191,6 @@ export function getRelatedArticles(
   slug: string,
   max = 3
 ) {
-  const all = getAllArticles();
   const current = getArticleBySlug(slug);
 
   if (!current) return [];
@@ -147,7 +199,7 @@ export function getRelatedArticles(
   const currentTagSlugs = current.tags.map((t) => t.slug);
 
   // 同タグ記事抽出（自分は除外）
-  const related = all.filter((article) => {
+  const related = articles.filter((article) => {
     if (article.slug === slug) return false;
 
     return article.tags.some((tag) =>

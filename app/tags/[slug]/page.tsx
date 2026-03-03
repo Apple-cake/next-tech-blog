@@ -8,11 +8,14 @@ import { tags } from "@/lib/tags";
 
 type Props = {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ page?: string }>;
 };
 
-export default async function TagPage({ params }: Props) {
+export default async function TagPage({ params, searchParams }: Props) {
   const { slug } = await params;
-  const articles = getArticlesByTag(slug);
+  const { page } = await searchParams;
+  const currentPage = Number(page ?? "1");
+  const { articles, totalPages } = getArticlesByTag(slug, currentPage, 2);
   const tagInfo = tags.find((t) => t.slug === slug);
   const label = tagInfo?.name ?? slug;
 
@@ -22,6 +25,9 @@ export default async function TagPage({ params }: Props) {
         <ArticleArchive
           title={`# ${label} の記事`}
           articles={articles}
+          totalPages={totalPages}
+          currentPage={currentPage}
+          basePath={`/tags/${slug}`}
         />
       </div>
     </main>
