@@ -12,15 +12,16 @@ type Props = {
 
 export default async function ArticlesPage({ searchParams }: Props) {
   const { page } = await searchParams;
+  const PER_PAGE = 3;
   const currentPage = Number(page ?? "1");
   if (!Number.isInteger(currentPage) || currentPage < 1) notFound();
   const totalCount = getAllArticleCount();
   const totalPages = Math.max(
     1,
-    Math.ceil(totalCount / 2)
+    Math.ceil(totalCount / PER_PAGE)
   );
   if (currentPage > totalPages) notFound();
-  const articles = getAllArticles(currentPage, 2);
+  const articles = getAllArticles(currentPage, PER_PAGE);
 
   return (
     <main className="max-w-7xl mx-auto px-6 md:pl-10 md:pr-4 py-10">

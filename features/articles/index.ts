@@ -1,4 +1,4 @@
-import { getUpdatedAt } from "@/lib/getUpdatedAt";
+import { getUpdatedMeta } from "@/lib/getUpdatedAt";
 
 /**
  * タグ型
@@ -18,6 +18,7 @@ export type Article = {
   description: string;
   publishedAt: string;
   updatedAt?: string;
+  updatedAtTimestamp?: number;
   content: string;
   tags: Tag[];
   image?: string;
@@ -48,6 +49,9 @@ import { cssLayoutFlexGridDifference } from "./content/css-layout-flex-grid-diff
 import { vuePerformanceOptimization } from "./content/vue-performance-optimization";
 import { uiVisualHierarchy } from "./content/ui-visual-hierarchy";
 import { javascriptAjax } from "./content/javascript-ajax";
+import { javascriptGetUserMedia } from "./content/javascript-get-user-media";
+import { javascriptAjaxPractice } from "./content/javascript-ajax-practice";
+import { typescriptApiResponseType } from "./content/typescript-api-response-type";
 // 記事が増えたらここにimport追加
 
 /**
@@ -70,39 +74,43 @@ const rawArticles = [
   vuePerformanceOptimization,
   uiVisualHierarchy,
   javascriptAjax,
+  javascriptGetUserMedia,
+  javascriptAjaxPractice,
+  typescriptApiResponseType,
 ];
 
 /**
  * 更新日時を追加した記事配列
  */
-export const articles: Article[] = rawArticles.map((article) => {
-  const updatedAt = (() => {
-    try {
-      return getUpdatedAt(
-        `features/articles/content/${article.slug}.ts`
-      );
-    } catch {
-      return article.publishedAt;
-    }
-  })();
+export const articles: Article[] = rawArticles
+.map((article) => {
+  try {
+    const { formatted, timestamp } = getUpdatedMeta(
+      `features/articles/content/${article.slug}.ts`
+    );
 
-  return {
-    ...article,
-    updatedAt,
-  };
+    return {
+      ...article,
+      updatedAt: formatted,
+      updatedAtTimestamp: timestamp,
+    };
+  } catch {
+    const fallbackTime = new Date(
+      article.publishedAt.replace(/\./g, "-")
+    ).getTime();
+
+    return {
+      ...article,
+      updatedAt: article.publishedAt,
+      updatedAtTimestamp: fallbackTime,
+    };
+  }
 })
 .sort((a, b) => {
-  // 比較基準日を決定
-  const dateA = new Date(
-    (a.updatedAt ?? a.publishedAt).replace(/\./g, "-")
-  ).getTime();
-
-  const dateB = new Date(
-    (b.updatedAt ?? b.publishedAt).replace(/\./g, "-")
-  ).getTime();
-
-  // 新しいものを先頭に（降順）
-  return dateB - dateA;
+  return (
+    (b.updatedAtTimestamp ?? 0) -
+    (a.updatedAtTimestamp ?? 0)
+  );
 });
 
 /**

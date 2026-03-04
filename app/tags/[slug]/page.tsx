@@ -15,6 +15,7 @@ type Props = {
 export default async function TagPage({ params, searchParams }: Props) {
   const { slug } = await params;
   const { page } = await searchParams;
+  const PER_PAGE = 3;
   const tagInfo = tags.find((t) => t.slug === slug);
   if (!tagInfo) notFound();
   const currentPage = Number(page ?? "1");
@@ -22,10 +23,10 @@ export default async function TagPage({ params, searchParams }: Props) {
   const totalCount = getArticleCountByTag(slug);
   const totalPages = Math.max(
     1,
-    Math.ceil(totalCount / 2)
+    Math.ceil(totalCount / PER_PAGE)
   );
   if (currentPage > totalPages) notFound();
-  const articles  = getArticlesByTag(slug, currentPage, 2);
+  const articles  = getArticlesByTag(slug, currentPage, PER_PAGE);
   const label = tagInfo?.name ?? slug;
 
   return (

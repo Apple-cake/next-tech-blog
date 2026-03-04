@@ -121,11 +121,19 @@ export default async function ArticlePage({ params }: Props) {
                   <h1 className="text-2xl md:text-3xl font-bold">{article.title}</h1>
                   <div className="text-sm text-zinc-500 mt-2 flex">
                     {article.updatedAt !== article.publishedAt ? (
-                      <span></span>  // TODO:更新アイコン
+                      <>
+                        {/* TODO: 更新アイコン */}
+                        <span></span>
+                        <span className="mr-4">更新日 {article.updatedAt}</span>
+                        <span>投稿日 {article.publishedAt}</span>
+                      </>
                     ) : (
-                      <span></span>  // TODO:新規アイコン
+                      <>
+                        {/* TODO: 新規アイコン */}
+                        <span></span>
+                        <span>投稿日 {article.publishedAt}</span>
+                      </>
                     )}
-                    <span>{article.publishedAt}</span>
                   </div>
                 </header>
                 {/* 本文 */}
