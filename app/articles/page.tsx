@@ -13,7 +13,6 @@ type Props = {
 export default async function ArticlesPage({ searchParams }: Props) {
   const { page } = await searchParams;
   const currentPage = Number(page ?? "1");
-  console.log("全記事一覧ページ currentPage", currentPage);
   if (!Number.isInteger(currentPage) || currentPage < 1) notFound();
   const totalCount = getAllArticleCount();
   const totalPages = Math.max(
