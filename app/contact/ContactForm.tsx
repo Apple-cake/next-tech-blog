@@ -63,7 +63,7 @@ export default function ContactForm() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border border-zinc-300 px-3 py-2 rounded"
+            className="w-full border border-zinc-300 px-3 py-2 bg-white rounded"
           />
         </div>
         <div>
@@ -75,7 +75,7 @@ export default function ContactForm() {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border border-zinc-300 px-3 py-2 rounded"
+          className="w-full border border-zinc-300 px-3 py-2 bg-white rounded"
         />
         </div>
         <div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
             type="text"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
-            className="w-full border border-zinc-300 px-3 py-2 rounded"
+            className="w-full border border-zinc-300 px-3 py-2 bg-white rounded"
           />
         </div>
         <div>
@@ -98,7 +98,7 @@ export default function ContactForm() {
           <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full max-h-50 min-h-20 md:h-30 border border-zinc-300 px-3 py-2 rounded"
+            className="w-full max-h-50 min-h-20 md:h-30 border border-zinc-300 px-3 py-2 bg-white rounded"
             rows={6}
           ></textarea>
         </div>
