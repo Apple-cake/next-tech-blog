@@ -7,6 +7,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [company, setCompany] = useState(""); // Bot対策用ダミー
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
@@ -28,7 +29,7 @@ export default function ContactForm() {
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, subject, message }),
+      body: JSON.stringify({ name, email, subject, message, company }),
     });
 
     const json = await res.json();
@@ -41,6 +42,7 @@ export default function ContactForm() {
       setEmail("");
       setSubject("");
       setMessage("");
+      setCompany("");
     }
   };
 
@@ -48,7 +50,7 @@ export default function ContactForm() {
     <>
       {success && (
         <p className="text-green-600 mb-4">
-          お問い合わせを送信しました。ありがとうございます！
+          お問い合わせを送信しました。
         </p>
       )}
       {error && <p className="text-[#ff4b4b] mb-4">{error}</p>}
@@ -110,6 +112,14 @@ export default function ContactForm() {
             送信する
           </button>
         </div>
+        {/* Bot対策（Honeypot） */}
+        <input
+          type="text"
+          name="company"
+          value=""
+          onChange={() => {}}
+          className="hidden"
+        />
       </form>
     </>
   );
