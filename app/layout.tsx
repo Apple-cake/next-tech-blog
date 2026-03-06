@@ -58,6 +58,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1008847397870501"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+      </head>
       <body className="bg-zinc-50 text-zinc-900">
         {/* ヘッダー */}
         <Header />
@@ -68,8 +76,8 @@ export default function RootLayout({
         </main>
 
         {/* フッター */}
-        {/* GA */}
         <Footer />
+        {/* GA */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
           strategy="afterInteractive"
