@@ -6,6 +6,8 @@ export const cssLayoutFlexGridDifference: Article = {
   description:
     "FlexboxとGridの違いを仕組みから解説。なぜ使い分けが重要なのか、具体例とともに理解できるCSSレイアウト設計ガイド。",
   publishedAt: "2026.03.02",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "CSS", slug: "css" },
   ],

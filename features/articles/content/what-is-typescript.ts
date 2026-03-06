@@ -6,6 +6,8 @@ export const whatIsTypescript: Article = {
   description:
     "TypeScriptとは何か？なぜ必要なのか？JavaScriptとの違い、型の意味、現場で使われる理由まで初心者向けに本質から解説します。",
   publishedAt: "2026.03.02",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "TypeScript", slug: "typescript" },
     { name: "JavaScript", slug: "javascript" },

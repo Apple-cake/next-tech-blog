@@ -6,6 +6,8 @@ export const cssTransitionHowToUse: Article = {
   description:
     "CSSのtransitionプロパティの基本的な使い方を解説します。hoverと組み合わせたアニメーションの基本から、自然な動きを作るコツまで初学者向けにまとめました。",
   publishedAt: "2026.02.27",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "CSS", slug: "css" },
     { name: "UI", slug: "ui" },

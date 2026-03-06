@@ -7,6 +7,8 @@ export const cssAnimationMethods: Article = {
   description:
     "CSSアニメーションの作り方を初心者向けに解説。@keyframesの基本からanimationプロパティの使い方、よく使うサンプルコードまでわかりやすく紹介します。",
   publishedAt: "2026.02.26",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [{ name: "CSS", slug: "css" }],
   content: `
     <p>CSSでアニメーションを作る方法は<code>transition</code>と<code>animation</code>の2種類があります。</p>

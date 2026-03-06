@@ -6,6 +6,8 @@ export const cssCursorHowToUse: Article = {
   description:
     "CSSのcursorプロパティの基本的な使い方を解説します。pointerやtextなどよく使う値を中心に、ユーザビリティを高める考え方もあわせて紹介します。",
   publishedAt: "2026.02.27",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "CSS", slug: "css" },
     { name: "UI", slug: "ui" },

@@ -6,6 +6,8 @@ export const javascriptScrollChangeCss: Article = {
   description:
     "scrollイベントとIntersectionObserverを使ったスクロール連動UIの実装を解説。パフォーマンスを意識したclass切り替えのコツも紹介します。",
   publishedAt: "2026.02.23",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "JavaScript", slug: "javascript" },
     { name: "CSS", slug: "css" },

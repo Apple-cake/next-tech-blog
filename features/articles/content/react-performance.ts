@@ -6,6 +6,8 @@ export const reactPerformance: Article = {
   description:
     "Reactアプリが重くなる原因の多くは不要な再レンダリングです。memo・useCallback・useMemoの使いどころと、設計レベルでの改善方法を具体例付きで解説します。",
   publishedAt: "2026.02.12",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "React", slug: "react" },
     { name: "パフォーマンス", slug: "performance" },

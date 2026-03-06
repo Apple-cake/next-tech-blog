@@ -6,6 +6,8 @@ export const typescriptDesign: Article = {
   description:
     "大規模開発に耐えうるTypeScriptの型設計手法を実例付きで解説。Union型・Discriminated Union・ドメイン設計・アンチパターンまで網羅します。",
   publishedAt: "2026.02.15",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [{ name: "TypeScript", slug: "typescript" }],
   content: `
 <h2>なぜTypeScriptの型設計が重要なのか</h2>

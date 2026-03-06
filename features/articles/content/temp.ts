@@ -6,6 +6,8 @@ export const temp: Article = {
   description:
     "説明",
   publishedAt: "2026.02.15",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "TypeScript", slug: "typescript" },
   ],

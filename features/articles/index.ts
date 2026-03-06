@@ -1,5 +1,3 @@
-import { getUpdatedMeta } from "@/lib/getUpdatedAt";
-
 /**
  * タグ型
  */
@@ -52,6 +50,9 @@ import { javascriptAjax } from "./content/javascript-ajax";
 import { javascriptGetUserMedia } from "./content/javascript-get-user-media";
 import { javascriptAjaxPractice } from "./content/javascript-ajax-practice";
 import { typescriptApiResponseType } from "./content/typescript-api-response-type";
+import { vueCompositionVsOptions } from "./content/vue-composition-vs-options";
+import { vueLoadingSpinner } from "./content/vue-loading-spinner";
+import { vuePiniaIntroduction } from "./content/vue-pinia-introduction";
 // 記事が増えたらここにimport追加
 
 /**
@@ -77,6 +78,9 @@ const rawArticles = [
   javascriptGetUserMedia,
   javascriptAjaxPractice,
   typescriptApiResponseType,
+  vueCompositionVsOptions,
+  vueLoadingSpinner,
+  vuePiniaIntroduction,
 ];
 
 /**
@@ -84,33 +88,25 @@ const rawArticles = [
  */
 export const articles: Article[] = rawArticles
 .map((article) => {
-  try {
-    const { formatted, timestamp } = getUpdatedMeta(
-      `features/articles/content/${article.slug}.ts`
-    );
+  const updatedAt = article.updatedAt ?? article.publishedAt
+  const updatedAtTimestamp = article.updatedAtTimestamp ?? new Date(article.publishedAt.replace(/\./g, "-")).getTime();
 
-    return {
-      ...article,
-      updatedAt: formatted,
-      updatedAtTimestamp: timestamp,
-    };
-  } catch {
-    const fallbackTime = new Date(
-      article.publishedAt.replace(/\./g, "-")
-    ).getTime();
-
-    return {
-      ...article,
-      updatedAt: article.publishedAt,
-      updatedAtTimestamp: fallbackTime,
-    };
-  }
+  return {
+    ...article,
+    updatedAt: updatedAt,
+    updatedAtTimestamp: updatedAtTimestamp,
+  };
 })
 .sort((a, b) => {
   return (
     (b.updatedAtTimestamp ?? 0) -
     (a.updatedAtTimestamp ?? 0)
   );
+});
+articles.map((a) => {
+  console.log("title", a.title);
+  console.log("updatedAt", a.updatedAt);
+  console.log("updatedAtTimestamp", a.updatedAtTimestamp);
 });
 
 /**

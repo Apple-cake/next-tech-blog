@@ -6,6 +6,8 @@ export const javascriptAjaxPractice: Article = {
   description:
     "気象庁の公開APIを題材に、fetchとaxiosを使った非同期通信の実装を丁寧に解説します。eval()がNGな理由やエラーハンドリングの考え方も合わせて整理します。",
   publishedAt: "2026.02.23",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "JavaScript", slug: "javascript" },
   ],

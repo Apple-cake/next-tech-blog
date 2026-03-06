@@ -6,6 +6,8 @@ export const cssPositionBasics: Article = {
   description:
     "CSSのpositionプロパティの基本を初学者向けに解説します。relative・absolute・fixed・stickyの違いを整理し、レイアウト崩れを防ぐ考え方までまとめました。",
   publishedAt: "2026.02.27",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "CSS", slug: "css" },
     { name: "UI", slug: "ui" },

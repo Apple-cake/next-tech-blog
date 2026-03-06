@@ -6,6 +6,8 @@ export const javascriptAjax: Article = {
   description:
     "Ajaxとは何か、なぜ必要なのかを整理しつつ、XMLHttpRequest・fetch・axiosの3つの実装方法をコード付きで解説します。",
   publishedAt: "2026.02.23",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "JavaScript", slug: "javascript" },
   ],

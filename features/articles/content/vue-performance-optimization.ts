@@ -6,6 +6,8 @@ export const vuePerformanceOptimization: Article = {
   description:
     "Vueアプリのパフォーマンス改善を仕組みから解説。再レンダリングの理解、computedとwatchの違い、v-ifとv-showの使い分けまで網羅します。",
   publishedAt: "2026.03.02",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "Vue", slug: "vue" },
     { name: "パフォーマンス", slug: "performance" },

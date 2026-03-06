@@ -6,6 +6,8 @@ export const javascriptGetUserMedia: Article = {
   description:
     "navigator.mediaDevices.getUserMedia()を使ってカメラ・マイクにアクセスする基本実装を解説。constraintsオプションによる解像度・カメラ切り替えの設定方法も紹介します。",
   publishedAt: "2026.03.04",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "JavaScript", slug: "javascript" },
   ],

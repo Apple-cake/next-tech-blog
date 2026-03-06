@@ -6,6 +6,8 @@ export const typescriptApiResponseType: Article = {
   description:
     "TypeScriptを使っているのにAPIレスポンスがany型のまま、になっていませんか？型をつけることで補完が効いてバグも減ります。気象庁APIを題材に、実践的な型定義の方法を解説します。",
   publishedAt: "2026.02.26",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "TypeScript", slug: "typescript" },
     { name: "JavaScript", slug: "javascript" },

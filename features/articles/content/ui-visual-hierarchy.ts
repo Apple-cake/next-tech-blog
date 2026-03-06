@@ -6,6 +6,8 @@ export const uiVisualHierarchy: Article = {
   description:
     "初心者向けに、UI設計で重要な視線誘導と情報の優先順位付けを解説。フォントサイズ、色、配置の考え方まで学べます。",
   publishedAt: "2026.03.02",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "UI", slug: "ui" },
   ],

@@ -6,6 +6,8 @@ export const gitStashUsage: Article = {
   description:
     "ブランチ作業中に現在の変更を一時退避するgit stashの基本的な使い方を初心者向けにわかりやすく解説します。",
   publishedAt: "2026.02.25",
+  updatedAt: undefined,
+  updatedAtTimestamp: undefined,
   tags: [
     { name: "Git", slug: "git" },
   ],
