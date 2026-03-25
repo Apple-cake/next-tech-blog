@@ -1,6 +1,9 @@
 import { MetadataRoute } from "next";
 import { articles } from "@/features/articles";
 
+export const dynamic = "force-static";
+export const revalidate = 0;
+
 export default function sitemap(): MetadataRoute.Sitemap {
 
   const baseUrl = "https://usagi-blog.vercel.app";
